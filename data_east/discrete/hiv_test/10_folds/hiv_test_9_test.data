@@ -1,0 +1,12 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+A: 1 2 
+B: 1 2 
+C: 1 2 
+D: 1 2 
+
+//Records: Numbers in the last column are frequencies.
+
+1 1 1 1   42.0

@@ -1,0 +1,30 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+pollution: high low 
+smoker: False True 
+cancer: False True 
+xray: negative positive 
+dyspnoea: False True 
+
+//Records: Numbers in the last column are frequencies.
+
+1 1 0 1 1   9.0
+1 1 0 0 0   67.0
+1 0 0 0 0   158.0
+1 0 0 1 0   35.0
+0 0 0 0 1   9.0
+1 0 0 0 1   73.0
+0 0 0 0 0   16.0
+1 1 1 1 1   5.0
+1 1 0 0 1   32.0
+1 0 0 1 1   25.0
+0 1 0 1 1   1.0
+1 1 0 1 0   7.0
+0 0 0 1 0   5.0
+0 0 0 1 1   2.0
+0 1 0 0 1   1.0
+0 1 0 0 0   3.0
+0 0 1 1 1   1.0
+1 1 1 1 0   1.0

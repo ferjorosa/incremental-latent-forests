@@ -1,0 +1,20 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+vSmoking: 0 1 
+vXRay: 0 1 
+vBronchitis: 0 1 
+vDyspnea: 0 1 
+
+//Records: Numbers in the last column are frequencies.
+
+0 0 0 0   31.0
+0 0 1 1   12.0
+0 1 0 0   1.0
+0 1 1 0   1.0
+0 1 1 1   1.0
+1 0 0 0   19.0
+1 0 1 0   5.0
+1 0 1 1   16.0
+1 1 1 1   4.0

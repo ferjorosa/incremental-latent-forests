@@ -1,0 +1,44 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+back_pain: no yes 
+neck_pain: no yes 
+joint_pain: no yes 
+swelling: no yes 
+stiffness: no yes 
+
+//Records: Numbers in the last column are frequencies.
+
+0 0 0 0 0   3293.0
+0 1 1 0 1   39.0
+0 0 0 1 0   84.0
+1 1 1 1 1   157.0
+0 0 1 0 1   78.0
+1 0 1 0 0   222.0
+1 1 1 0 0   203.0
+1 1 0 0 0   276.0
+1 0 0 0 0   432.0
+0 0 1 0 0   401.0
+0 0 1 1 0   93.0
+1 0 1 0 1   102.0
+1 1 1 0 1   147.0
+0 1 1 0 0   117.0
+0 1 0 0 0   264.0
+1 1 1 1 0   41.0
+0 1 1 1 0   31.0
+0 0 0 0 1   66.0
+1 1 0 1 0   16.0
+1 1 0 0 1   44.0
+0 1 0 0 1   22.0
+0 0 1 1 1   70.0
+1 0 0 1 0   21.0
+1 0 1 1 0   64.0
+1 0 0 0 1   32.0
+0 1 1 1 1   30.0
+1 0 1 1 1   59.0
+0 1 0 1 0   13.0
+1 0 0 1 1   6.0
+1 1 0 1 1   11.0
+0 0 0 1 1   8.0
+0 1 0 1 1   4.0

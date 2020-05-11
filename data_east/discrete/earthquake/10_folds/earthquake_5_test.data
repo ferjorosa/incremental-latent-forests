@@ -1,0 +1,15 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+burglary: False True 
+earthquake: False True 
+alarm: False True 
+johncalls: False True 
+marycalls: False True 
+
+//Records: Numbers in the last column are frequencies.
+
+0 0 0 0 0   95.0
+0 0 0 1 0   3.0
+0 1 0 0 0   2.0

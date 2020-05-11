@@ -1,0 +1,27 @@
+Name: dataset
+
+//Variables: name of variable followed by names of states
+
+A: 0 1 
+B: 0 1 
+C: 0 1 
+D: 0 1 
+
+//Records: Numbers in the last column are frequencies.
+
+0 0 0 0   169.0
+1 0 0 0   52.0
+0 0 0 1   43.0
+1 1 1 1   259.0
+1 0 1 1   42.0
+1 1 0 0   76.0
+0 1 0 0   93.0
+1 0 1 0   29.0
+1 1 0 1   46.0
+1 0 0 1   15.0
+0 1 1 1   52.0
+1 1 1 0   55.0
+0 0 1 0   24.0
+0 0 1 1   27.0
+0 1 0 1   71.0
+0 1 1 0   14.0
