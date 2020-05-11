@@ -1,0 +1,32 @@
+Residential building data (105, 372)
+https://archive.ics.uci.edu/ml/datasets/Residential+Building+Data+Set
+
+
+Geographical Original music (1059, 68 -> 70)
+https://archive.ics.uci.edu/ml/datasets/Geographical+Original+of+Music
+
+
+MEU Mobile KSD 2016 (2856, 71)
+https://archive.ics.uci.edu/ml/datasets/MEU-Mobile+KSD
+
+
+First-order theorem proving Data Set (6118, 51)
+https://archive.ics.uci.edu/ml/datasets/First-order+theorem+proving
+
+
+100 plant species (1600, 64 -> 63)
+https://archive.ics.uci.edu/ml/datasets/One-hundred+plant+species+leaves+data+set
+
+
+Waveform (5000, 40)
+https://archive.ics.uci.edu/ml/datasets/Waveform+Database+Generator+%28Version+2%29
+
+
+
+Mice protein (1080, 82) [requiere limpieza]
+https://archive.ics.uci.edu/ml/datasets/Mice+Protein+Expression
+
+
+Low resolution spectrometer (531, 102) [requiere preprocesado para pasarlo a buen formato CSV]
+https://archive.ics.uci.edu/ml/datasets/Low+Resolution+Spectrometer
+

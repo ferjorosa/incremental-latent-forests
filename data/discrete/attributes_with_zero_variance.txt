@@ -1,0 +1,126 @@
+alarm
+Attributes with zero variance in at least one fold (will be ignored):
+vAnaphylaxis,
+
+asia
+Attributes with zero variance in at least one fold (will be ignored):
+vVisitToAsia, vTuberculosis, vLungCancer, vTbOrCa,
+
+balance_scale
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+breast_cancer
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+breast_w
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+cancer
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+car_evaluation
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+child
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+coil_42
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+coleman
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+earthquake
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+hannover
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+hayes_roth
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+hiv_test
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+house_building
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+insurance
+Attributes with zero variance in at least one fold (will be ignored):
+theft,
+
+mildew
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+monks_1
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+monks_2
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+monks_3
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+mushroom
+Attributes with zero variance in at least one fold (will be ignored):
+veil.type, gill.attachment, veil.color,
+
+nursery
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+pascal_voc_2007
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+sachs
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+solar_flare
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+somerville
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+spect_heart
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+survey
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+vote
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+water
+Attributes with zero variance in at least one fold (will be ignored):
+cbodd_12_00, cknd_12_00, cnod_12_00, cbodn_12_00, cknn_12_00, cnon_12_00,
+
+web_phishing
+Attributes with zero variance in at least one fold (will be ignored):
+
+
+zoo
+Attributes with zero variance in at least one fold (will be ignored):
