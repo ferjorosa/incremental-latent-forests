@@ -18,10 +18,7 @@ public class GenerateDataEAST {
 
         String directory = "discrete";
         String[] fileNames = {
-                "alarm", "asia", "balance_scale", "breast_cancer", "breast_w", "cancer", "car_evaluation",
-                "child", "coil_42", "coleman", "earthquake", "hannover", "hayes_roth", "hiv_test", "house_building", "insurance",
-                "mildew", "monks_1", "monks_2", "monks_3", "mushroom", "nursery", "pascal_voc_2007", "sachs", "solar_flare",
-                "somerville", "spect_heart", "survey", "vote", "water", "web_phishing", "zoo"
+            "news_100"
         };
 
         for(String fileName: fileNames) {

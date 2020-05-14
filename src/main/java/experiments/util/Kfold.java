@@ -25,24 +25,19 @@ public class Kfold {
 
     public static void main(String[] args) throws Exception {
 
-        /* Discrete (low-medium) */
+        /* Discrete */
         /*
         String directory = "discrete";
         String[] fileNames = {
-                "alarm", "asia", "balance_scale", "breast_cancer", "breast_w", "cancer", "car_evaluation",
-                "child", "coil_42", "coleman", "earthquake", "hannover", "hayes_roth", "hiv_test", "house_building", "insurance",
-                "mildew", "monks_1", "monks_2", "monks_3", "mushroom", "nursery", "pascal_voc_2007", "sachs", "solar_flare",
-                "somerville", "spect_heart", "survey", "vote", "water", "web_phishing", "zoo"
+                "alarm",  "balance_scale", "breast_cancer", "car_evaluation", "coil_42", "hayes_roth", "hiv_test",
+                "house_building", "mushroom", "news_100", "nursery", "pascal_voc_2007", "spect_heart", "vote", "webkb_336"
         };
         */
-        /* Continuous (low-medium) */
+        /* Continuous  */
         String directory = "continuous";
         String[] fileNames = {
-                "alcohol", "banknote", "blood_transfusion", "breast_cancer_coimbra", "buddymove", "cpu", "cryotherapy",
-                "ecoli", "glass", "haberman", "ilpd", "ionosphere", "iris", "leaf", "nba",
-                "parkinsons", "pima", "planning_relax", "qsar_aqua_toxicity", "qsar_fish_toxicity", "real_state_valuation",
-                "seeds", "travel_reviews", "user_knowledge", "vehicle", "vertebral", "wdbc", "wholesale", "wine",
-                "wine_quality_white", "yeast"
+                "100_plants", "alcohol", "buddymove", "geo_music", "glass", "ilpd", "ionosphere", "iris", "leaf", "nba",
+                "vehicle", "waveform", "wdbc", "wine", "yeast"
         };
 
         for(String fileName: fileNames) {
