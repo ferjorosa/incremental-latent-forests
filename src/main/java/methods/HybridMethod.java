@@ -25,8 +25,9 @@ public interface HybridMethod extends Method {
         new File(directoryPath).mkdirs();
 
         for(int i = 0; i < models.size(); i++) {
+            String output = directoryPath + "/" + dataName + "_" + (i+1) + "_" + methodName + ".xdsl";
             GenieWriter genieWriter = new GenieWriter();
-            genieWriter.write(models.get(i), new File(directoryPath + "/" + dataName + "_" +methodName + ".xdsl"));
+            genieWriter.write(models.get(i), new File(output));
         }
     }
 }

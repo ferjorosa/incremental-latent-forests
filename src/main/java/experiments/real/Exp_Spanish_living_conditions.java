@@ -10,10 +10,7 @@ import eu.amidst.extension.util.PriorsFromData;
 import experiments.CrossValidationExperiment;
 import experiments.MixedDataExperiment;
 import experiments.util.Kfold;
-import methods.HybridMethod;
-import methods.VariationalIncrementalLearner;
-import methods.VariationalIncrementalLearnerMax;
-import methods.VariationalLCM;
+import methods.*;
 import voltric.util.Tuple;
 
 import java.nio.file.Files;
@@ -35,9 +32,9 @@ public class Exp_Spanish_living_conditions extends MixedDataExperiment implement
 
         Set<HybridMethod> methods = new LinkedHashSet<>();
         methods.add(new VariationalLCM(seed));
-        methods.add(new VariationalIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearnerMax(seed, false, true, true, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new IncrementalLearner(seed, false, true, true, new SimpleLocalVBEM()));
 
         Exp_Spanish_living_conditions experiment = new Exp_Spanish_living_conditions(methods);
         experiment.runCrossValExperiment(seed, kFolds, run, logLevel);
@@ -66,19 +63,24 @@ public class Exp_Spanish_living_conditions extends MixedDataExperiment implement
         final Map<String, double[]> priors = PriorsFromData.generate(data, 1);
 
         /* Establish the prior parameters of variables using the ECH data
-            - urban_degree ()
-            - home_rooms ()
-            - family members ()
+            - home_ownership
+            - home_rooms
+            - family_members
 
             Prior parameters have been obtained in the python file "generate_priors_from_ech.ipynb"
          */
-        double[] urban_degree_prior_params = {0.53, 0.27, 0.15, 0.05};
+        double[] home_ownership_prior_params = {0.53, 0.27, 0.15, 0.05};
         double[] family_members_prior_params = {2.52, 1, 0.5, 0.63};
         double[] home_rooms_prior_params = {5.44, 1, 0.5, 0.68};
 
-        priors.put("urban_degree", urban_degree_prior_params);
+        priors.put("home_ownership", home_ownership_prior_params);
         priors.put("family_members", family_members_prior_params);
         priors.put("home_rooms", home_rooms_prior_params);
+
+        /* Filter Bayesian methods and assign them the priors */
+        this.methods.stream()
+                .filter(x -> x instanceof BayesianMethod)
+                .forEach(x -> ((BayesianMethod) x).setPriors(priors));
 
         /* Run methods */
         for (HybridMethod method : methods)

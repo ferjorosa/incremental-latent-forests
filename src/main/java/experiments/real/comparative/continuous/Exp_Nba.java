@@ -37,10 +37,10 @@ public class Exp_Nba extends ContinuousDataExperiment implements CrossValidation
 
         Set<ContinuousMethod> methods = new LinkedHashSet<>();
         methods.add(new GaussianLCM(seed));
-        methods.add(new VariationalIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
         methods.add(new GS(seed));
-        methods.add(new VariationalIncrementalLearnerMax(seed, false, true, true, new SimpleLocalVBEM()));
+        methods.add(new IncrementalLearner(seed, false, true, true, new SimpleLocalVBEM()));
         methods.add(new GEAST("geast_settings.xml", seed));
 
         Exp_Nba exp = new Exp_Nba(methods);

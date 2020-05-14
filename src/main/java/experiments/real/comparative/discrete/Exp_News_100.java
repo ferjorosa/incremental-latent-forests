@@ -36,9 +36,9 @@ public class Exp_News_100 extends DiscreteDataExperiment implements CrossValidat
         Set<DiscreteMethod> methods = new LinkedHashSet<>();
         methods.add(new BinA(seed, BLFM_BinA.LinkageType.AVERAGE));
         methods.add(new LCM(seed));
-        methods.add(new VariationalIncrementalLearner(seed, 10, false, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearner(seed, 1, false, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearnerMax(seed, false, true, true, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 10, false, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 1, false, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new IncrementalLearner(seed, false, true, true, new SimpleLocalVBEM()));
 
         Exp_News_100 news_100 = new Exp_News_100(methods);
         news_100.runCrossValExperiment(seed, kFolds, run, logLevel);

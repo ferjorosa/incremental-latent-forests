@@ -7,7 +7,7 @@ import eu.amidst.extension.learn.parameter.InitializationTypeVBEM;
 import eu.amidst.extension.learn.parameter.InitializationVBEM;
 import eu.amidst.extension.learn.parameter.VBEMConfig;
 import eu.amidst.extension.learn.parameter.penalizer.BishopPenalizer;
-import eu.amidst.extension.learn.structure.BLFM_IncLearner;
+import eu.amidst.extension.learn.structure.BLFM_IncLearnerMax;
 import eu.amidst.extension.learn.structure.Result;
 import eu.amidst.extension.learn.structure.operator.incremental.BlfmIncAddArc;
 import eu.amidst.extension.learn.structure.operator.incremental.BlfmIncAddDiscreteNode;
@@ -16,7 +16,6 @@ import eu.amidst.extension.learn.structure.typelocalvbem.TypeLocalVBEM;
 import eu.amidst.extension.util.LogUtils;
 import eu.amidst.extension.util.Tuple3;
 import eu.amidst.extension.util.Tuple4;
-import eu.amidst.extension.util.distance.ChebyshevDistance;
 import experiments.util.AmidstToVoltricModel;
 import experiments.util.EstimatePredictiveScore;
 import voltric.model.DiscreteBayesNet;
@@ -27,59 +26,24 @@ import java.text.DecimalFormatSymbols;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class VariationalIncrementalLearner implements DiscreteMethod, ContinuousMethod, HybridMethod, BayesianMethod {
+public class IncrementalLearner implements DiscreteMethod, ContinuousMethod, HybridMethod, BayesianMethod {
 
     private long seed;
-    private double alphaPercentage;
-    private int alpha = -1;
     private boolean iterationGlobalVBEM;
     private boolean allowObservedToObserved;
     private boolean allowObservedToLatent;
-    private int n_neighbors_mi;
-    private boolean gaussianNoise_mi;
-    private boolean normalized_mi;
     private Map<String, double[]> priors;
     private TypeLocalVBEM typeLocalVBEM;
 
-    public VariationalIncrementalLearner(long seed,
-                                         double alphaPercentage,
-                                         boolean iterationGlobalVBEM,
-                                         boolean allowObservedToObserved,
-                                         boolean allowObservedToLatent,
-                                         int n_neighbors_mi,
-                                         boolean gaussianNoise_mi,
-                                         boolean normalized_mi,
-                                         TypeLocalVBEM typeLocalVBEM) {
+    public IncrementalLearner(long seed,
+                              boolean iterationGlobalVBEM,
+                              boolean allowObservedToObserved,
+                              boolean allowObservedToLatent,
+                              TypeLocalVBEM typeLocalVBEM) {
         this.seed = seed;
-        this.alpha = -1;
-        this.alphaPercentage = alphaPercentage;
         this.iterationGlobalVBEM = iterationGlobalVBEM;
-        this.allowObservedToObserved = allowObservedToObserved;
         this.allowObservedToLatent = allowObservedToLatent;
-        this.n_neighbors_mi = n_neighbors_mi;
-        this.gaussianNoise_mi = gaussianNoise_mi;
-        this.normalized_mi = normalized_mi;
-        this.priors = new HashMap<>();
-        this.typeLocalVBEM = typeLocalVBEM;
-    }
-
-    public VariationalIncrementalLearner(long seed,
-                                         int alpha,
-                                         boolean iterationGlobalVBEM,
-                                         boolean allowObservedToObserved,
-                                         boolean allowObservedToLatent,
-                                         int n_neighbors_mi,
-                                         boolean gaussianNoise_mi,
-                                         boolean normalized_mi,
-                                         TypeLocalVBEM typeLocalVBEM) {
-        this.seed = seed;
-        this.alpha = alpha;
-        this.iterationGlobalVBEM = iterationGlobalVBEM;
         this.allowObservedToObserved = allowObservedToObserved;
-        this.allowObservedToLatent = allowObservedToLatent;
-        this.n_neighbors_mi = n_neighbors_mi;
-        this.gaussianNoise_mi = gaussianNoise_mi;
-        this.normalized_mi = normalized_mi;
         this.priors = new HashMap<>();
         this.typeLocalVBEM = typeLocalVBEM;
     }
@@ -87,20 +51,16 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
     public static Tuple3<BayesianNetwork, Double, Long> learnModel(DataOnMemory<DataInstance> data,
                                                                    Map<String, double[]> priors,
                                                                    long seed,
-                                                                   int alpha,
                                                                    boolean iterationGlobalVBEM,
                                                                    boolean allowObservedToObserved,
                                                                    boolean allowObservedToLatent,
-                                                                   int n_neighbors_mi,
-                                                                   boolean gaussianNoise_mi,
-                                                                   boolean normalizedMI,
                                                                    TypeLocalVBEM typeLocalVBEM,
                                                                    LogUtils.LogLevel logLevel,
                                                                    boolean printNetwork) {
 
         System.out.println("\n==========================");
-        System.out.println("Variational Incremental Learner (alpha = "+alpha+", allowObservedToObserved = " + allowObservedToObserved + ", allowObservedToLatent = "+allowObservedToLatent+") ");
-        System.out.println("==========================\n");
+        System.out.println("Incremental Learner (allowObservedToObserved = " + allowObservedToObserved + ", allowObservedToLatent = "+allowObservedToLatent+") ");
+        System.out.println("==========================");
 
         InitializationVBEM initialVBEMinitialization = new InitializationVBEM(InitializationTypeVBEM.RANDOM, 1, 1, false);
         VBEMConfig initialVBEMConfig = new VBEMConfig(seed, 0.01, 100, initialVBEMinitialization, new BishopPenalizer());
@@ -119,20 +79,15 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
         operators.add(addDiscreteNodeOperator);
         operators.add(addArcOperator);
 
-        BLFM_IncLearner incrementalLearner = new BLFM_IncLearner(operators,
+        BLFM_IncLearnerMax incLearnerMax = new BLFM_IncLearnerMax(operators,
                 iterationGlobalVBEM,
-                n_neighbors_mi,
-                new ChebyshevDistance(),
-                gaussianNoise_mi,
-                seed,
-                normalizedMI,
                 initialVBEMConfig,
                 localVBEMConfig,
                 iterationVBEMConfig,
                 finalVBEMConfig,
                 typeLocalVBEM);
 
-        Result result = incrementalLearner.learnModel(data, alpha, priors, logLevel);
+        Result result = incLearnerMax.learnModel(data, priors, logLevel);
         result.getPlateuStructure().updateParameterVariablesPrior(result.getPlateuStructure().getParameterVariablesPosterior());
         BayesianNetwork posteriorPredictive = new BayesianNetwork(result.getDag(), result.getPlateuStructure().getEFLearningBN().toConditionalDistribution());
 
@@ -155,6 +110,7 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
 
     }
 
+
     /* The priors can be different for each dataSet (i.e., Empirical Bayes) */
     @Override
     public void setPriors(Map<String, double[]> priors) {
@@ -168,34 +124,25 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
                             LogUtils.LogLevel foldLogLevel) throws Exception {
 
         List<DiscreteBayesNet> models = new ArrayList<>(folds.size());
-        List<Tuple3<Double, Double, Long>> scoresAndTimes = new ArrayList<>(folds.size());
+        List<Tuple3<Double, Double, Long>> scores = new ArrayList<>(folds.size());
 
         /* Run */
         List<Tuple4<BayesianNetwork, Double, Double, Long>> results = run(folds, foldLogLevel);
         for(Tuple4<BayesianNetwork, Double, Double, Long> result: results) {
             models.add(AmidstToVoltricModel.transform(result.getFirst()));
-            scoresAndTimes.add(new Tuple3<>(result.getSecond(), result.getThird(), result.getFourth()));
+            scores.add(new Tuple3<>(result.getSecond(), result.getThird(), result.getFourth()));
         }
 
-        /* Show average time and score */
-        showAverageScoreAndTime(scoresAndTimes);
-
-        /* Alpha */
-        String alphaString = "";
-        if(alpha != -1)
-            alphaString = alphaString + alpha;
-        else
-            alphaString = alphaString + alphaPercentage;
-
-        alphaString = alphaString.replace(".","_");
-
         /* Store models */
-        storeDiscreteModels(models, "results/run_"+ run + "/discrete/" + dataName + "/" + folds.size()
-                + "_folds/variational_IL_" + alphaString, dataName, "variational_IL_" + alphaString);
+        storeDiscreteModels(models, "results/run_"+ run +"/discrete/"+ dataName + "/" + folds.size()
+                + "_folds/IL", dataName, "IL");
+
+        /* Show average time and score */
+        showAverageScoreAndTime(scores);
 
         /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/run_"+ run +"/discrete/"+ dataName+"/" + folds.size()
-                + "_folds/variational_IL_" + alphaString,  dataName + "_results_variational_IL_"+alphaString+".json");
+        storeResults(scores, "results/run_"+ run +"/discrete/"+ dataName+"/" + folds.size()
+                        + "_folds/IL", dataName + "_results_IL.json");
     }
 
     @Override
@@ -204,31 +151,23 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
                               int run,
                               LogUtils.LogLevel foldLogLevel) throws Exception {
 
-        List<Tuple3<Double, Double, Long>> scoresAndTimes = new ArrayList<>(folds.size());
+        List<Tuple3<Double, Double, Long>> scores = new ArrayList<>(folds.size());
 
         /* Run */
-        List<Tuple4<BayesianNetwork, Double, Double, Long>> variationalIncLearnerResults = run(folds, foldLogLevel);
-        for(Tuple4<BayesianNetwork, Double, Double, Long> variationalResult: variationalIncLearnerResults) {
-            scoresAndTimes.add(new Tuple3<>(variationalResult.getSecond(), variationalResult.getThird(), variationalResult.getFourth()));
+        List<Tuple4<BayesianNetwork, Double, Double, Long>> results = run(folds, foldLogLevel);
+        for(Tuple4<BayesianNetwork, Double, Double, Long> result: results) {
+            scores.add(new Tuple3<>(result.getSecond(), result.getThird(), result.getFourth()));
         }
 
         /* Show average time and score */
-        showAverageScoreAndTime(scoresAndTimes);
-
-        /* Alpha */
-        String alphaString = "";
-        if(alpha != -1)
-            alphaString = alphaString + alpha;
-        else
-            alphaString = alphaString + alphaPercentage;
-
-        alphaString = alphaString.replace(".","_");
+        showAverageScoreAndTime(scores);
 
         /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/run_"+ run +"/continuous/"+ dataName+"/" + folds.size()
-                + "_folds/variational_IL_" + alphaString, dataName + "_results_variational_IL_"+alphaString+".json");
+        storeResults(scores, "results/run_"+ run +"/continuous/"+ dataName+"/" + folds.size()
+                        + "_folds/IL", dataName + "_results_IL.json");
     }
 
+    @Override
     public void runHybrid(List<Tuple<DataOnMemory<DataInstance>, DataOnMemory<DataInstance>>> folds,
                           String dataName,
                           int run,
@@ -237,45 +176,29 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
         List<Tuple3<Double, Double, Long>> scoresAndTimes = new ArrayList<>(folds.size());
 
         /* Run */
-        List<Tuple4<BayesianNetwork, Double, Double, Long>> variationalIncLearnerResults = run(folds, foldLogLevel);
-        for(Tuple4<BayesianNetwork, Double, Double, Long> variationalResult: variationalIncLearnerResults) {
+        List<Tuple4<BayesianNetwork, Double, Double, Long>> results = run(folds, foldLogLevel);
+        for(Tuple4<BayesianNetwork, Double, Double, Long> variationalResult: results) {
             scoresAndTimes.add(new Tuple3<>(variationalResult.getSecond(), variationalResult.getThird(), variationalResult.getFourth()));
         }
-        List<BayesianNetwork> models = variationalIncLearnerResults.stream().map(x->x.getFirst()).collect(Collectors.toList());
+        List<BayesianNetwork> models = results.stream().map(x->x.getFirst()).collect(Collectors.toList());
 
         /* Show average time and score */
         showAverageScoreAndTime(scoresAndTimes);
 
-        /* Alpha */
-        String alphaString = "";
-        if(alpha != -1)
-            alphaString = alphaString + alpha;
-        else
-            alphaString = alphaString + alphaPercentage;
-
-        alphaString = alphaString.replace(".","_");
+        /* Store models */
+        storeHybridModels(models, "results/spanish_living_conditions/IL",
+                dataName, "IL");
 
         /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/spanish_living_conditions/variational_IL_" + alphaString,
-                dataName + "_results_variational_IL_"+alphaString+".json");
-
-        /* Store models */
-        storeHybridModels(models, "results/spanish_living_conditions/variational_IL_" + alphaString,
-                dataName, "variational_IL_" + alphaString);
+        storeResults(scoresAndTimes, "results/spanish_living_conditions/IL",
+                dataName + "_results_IL.json");
     }
 
     private List<Tuple4<BayesianNetwork, Double, Double, Long>> run(List<Tuple<DataOnMemory<DataInstance>, DataOnMemory<DataInstance>>> folds,
                                                                     LogUtils.LogLevel foldLogLevel) {
-
-        /* Estimate alpha */
-        if(this.alpha == -1) {
-            int numberOfAttributes = folds.get(0).getFirst().getAttributes().getNumberOfAttributes();
-            int alpha = (int) Math.round(numberOfAttributes * numberOfAttributes * 0.5 * alphaPercentage);
-            this.alpha = minOrOne(alpha); // In case the alpha value is 0
-        }
         System.out.println("\n==========================");
-        System.out.println("Variational Incremental Learner (alpha = "+alpha+", allowObservedToObserved = " + allowObservedToObserved + ", allowObservedToLatent = "+allowObservedToLatent+") ");
-        System.out.println("==========================");
+        System.out.println("Incremental Learner (allowObservedToObserved = " + allowObservedToObserved + ", allowObservedToLatent = "+allowObservedToLatent+") ");
+        System.out.println("==========================\n");
 
         InitializationVBEM initialVBEMinitialization = new InitializationVBEM(InitializationTypeVBEM.RANDOM, 1, 1, false);
         VBEMConfig initialVBEMConfig = new VBEMConfig(seed, 0.01, 100, initialVBEMinitialization, new BishopPenalizer());
@@ -292,13 +215,8 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
         operators.add(addDiscreteNodeOperator);
         operators.add(addArcOperator);
 
-        BLFM_IncLearner incLearner = new BLFM_IncLearner(operators,
+        BLFM_IncLearnerMax incrementalLearnerMax = new BLFM_IncLearnerMax(operators,
                 iterationGlobalVBEM,
-                n_neighbors_mi,
-                new ChebyshevDistance(),
-                gaussianNoise_mi,
-                seed,
-                normalized_mi,
                 initialVBEMConfig,
                 localVBEMConfig,
                 iterationVBEMConfig,
@@ -307,7 +225,6 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
 
         List<Tuple4<BayesianNetwork, Double, Double, Long>> foldsResults = new ArrayList<>();
 
-
         for(int i = 0; i < folds.size(); i++) {
 
             DataOnMemory<DataInstance> trainData = folds.get(i).getFirst();
@@ -315,7 +232,7 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
 
             long initTime = System.currentTimeMillis();
 
-            Result result = incLearner.learnModel(trainData, alpha, priors, LogUtils.LogLevel.NONE);
+            Result result = incrementalLearnerMax.learnModel(trainData, priors, LogUtils.LogLevel.NONE);
             result.getPlateuStructure().updateParameterVariablesPrior(result.getPlateuStructure().getParameterVariablesPosterior());
             BayesianNetwork posteriorPredictive = new BayesianNetwork(result.getDag(), result.getPlateuStructure().getEFLearningBN().toConditionalDistribution());
 
@@ -334,11 +251,5 @@ public class VariationalIncrementalLearner implements DiscreteMethod, Continuous
         }
 
         return foldsResults;
-    }
-
-    private int minOrOne(int x) {
-        if(x < 1)
-            return 1;
-        return x;
     }
 }

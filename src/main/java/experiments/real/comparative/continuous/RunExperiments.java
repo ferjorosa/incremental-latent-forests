@@ -20,10 +20,10 @@ public class RunExperiments {
         /* Preparamos los metodos que se van a utilizar en los experimentos */
         Set<ContinuousMethod> methods = new LinkedHashSet<>();
         methods.add(new GaussianLCM(seed));
-        methods.add(new VariationalIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
-        methods.add(new VariationalIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 1, true, true, true, 3, false, false, new SimpleLocalVBEM()));
+        methods.add(new ConstrainedIncrementalLearner(seed, 10, true, true, true, 3, false, false, new SimpleLocalVBEM()));
         methods.add(new GS(seed));
-        methods.add(new VariationalIncrementalLearnerMax(seed, false, true, true, new SimpleLocalVBEM()));
+        methods.add(new IncrementalLearner(seed, false, true, true, new SimpleLocalVBEM()));
         methods.add(new GEAST("geast_settings.xml", seed));
 
         /* Definimos los experimentos que se van a ejecutar */
