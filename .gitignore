@@ -14,7 +14,8 @@ hs_err_pid*
 out/
 *.iml
 target/
-project/
+project/target
+project/build.properties
 output/
 tmp/
 zhang_algorithms/EAST/temp/
