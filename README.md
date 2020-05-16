@@ -45,7 +45,7 @@ study without needing to manually go one by one.
 Each experiment in the discrete and continuous comparative studies contains a main public method that can be executed. The process is as simple as right-clicking on the corresponding 
 experiment file and, on the pop-up, clicking on "run".
 
-![alt text](https://i.imgur.com/FevRZEg.png "How to run the Hiv-test experiment")
+![alt text](https://i.imgur.com/M1RrSAO.png "How to run the Hiv-test experiment")
 
 As an example, when running the Hiv-test experiment in the discrete comparative study, it should return something like this:
 
