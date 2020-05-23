@@ -1,5 +1,5 @@
 # bayesian-latent-forests
-[![Build Status](https://travis-ci.org/ferjorosa/bayesian-latent-forests.png?branch=master)](https://travis-ci.org/ferjorosa/bayesian-latent-forests) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://travis-ci.com/ferjorosa/bayesian-latent-forests.png?branch=master)](https://travis-ci.com/ferjorosa/bayesian-latent-forests) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 This is the code repository of the paper **Bayesian discovery of latent forests** (IEEE Access). It includes the Java implementation of the *incremental learner* (IL) and *constrained incremental learner* (CIL) algorithms described in the paper. It also includes data and code used to run the experiments described in the paper.
 
@@ -45,7 +45,7 @@ study without needing to manually go one by one.
 Each experiment in the discrete and continuous comparative studies contains a main public method that can be executed. The process is as simple as right-clicking on the corresponding 
 experiment file and, on the pop-up, clicking on "run".
 
-![alt text](https://i.imgur.com/FevRZEg.png "How to run the Hiv-test experiment")
+![alt text](https://i.imgur.com/M1RrSAO.png "How to run the Hiv-test experiment")
 
 As an example, when running the Hiv-test experiment in the discrete comparative study, it should return something like this:
 
