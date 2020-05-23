@@ -1,0 +1,367 @@
+?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <probabilities>0.9934065965884188 0.006005563302210207 2.5193147651907425E-4 1.679543164259321E-4 1.679543164259321E-4 </probabilities>
+    </cpt>
+    <cpt id="urban_degree">
+      <state id="high_pop"/>
+      <state id="low_pop"/>
+      <state id="medium_pop"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.5115227780054146 0.2727944159377067 0.21568280605687876 0.5284101441178041 0.1971967696371635 0.2743930862450323 0.4285714265755638 0.28571428480050093 0.2857142886239352 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 </probabilities>
+    </cpt>
+    <equation id="house_rooms">
+      <parents>ClustVar</parents>
+      <definition lower="1.0" upper="6.0">house_rooms=Choose(ClustVar,Normal(4.7384149696795,1.0811231486916257),Normal(4.3079579742637275,1.7096040903923382),Normal(1.000000053430496,0.6666666974127073),Normal(0.0,1.0),Normal(0.0,1.0))</definition>
+      <discretization>
+        <interval upper="1.5"/>
+        <interval upper="2.0"/>
+        <interval upper="2.5"/>
+        <interval upper="3.0"/>
+        <interval upper="3.5"/>
+        <interval upper="4.0"/>
+        <interval upper="4.5"/>
+        <interval upper="5.0"/>
+        <interval upper="5.5"/>
+        <interval upper="6.0"/>
+      </discretization>
+    </equation>
+    <cpt id="housing_tenure">
+      <state id="free_transfer"/>
+      <state id="mortgage"/>
+      <state id="property"/>
+      <state id="rent_low"/>
+      <state id="rent_normal"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.05499479276029604 0.23873329399739862 0.5501611765672924 0.026530125624560447 0.12958061105045265 0.17606812166443025 0.08800980867449763 0.48387442529291075 0.11255864405661407 0.1394890003115473 0.18181818144811343 0.18181818144811343 0.18181818388124463 0.18181818144811343 0.272727271774415 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 </probabilities>
+    </cpt>
+    <equation id="family_members">
+      <parents>ClustVar</parents>
+      <definition lower="1.0" upper="13.0">family_members=Choose(ClustVar,Normal(2.5289656267663685,1.5642283671814163),Normal(1.6211796167739523,1.0993873264944083),Normal(2.9999999996999995,0.6666666619913042),Normal(0.0,1.0),Normal(0.0,1.0))</definition>
+      <discretization>
+        <interval upper="2.2"/>
+        <interval upper="3.4000000000000004"/>
+        <interval upper="4.6000000000000005"/>
+        <interval upper="5.800000000000001"/>
+        <interval upper="7.000000000000001"/>
+        <interval upper="8.200000000000001"/>
+        <interval upper="9.4"/>
+        <interval upper="10.6"/>
+        <interval upper="11.799999999999999"/>
+        <interval upper="12.999999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="equivalent_income">
+      <parents>ClustVar</parents>
+      <definition lower="-8713.5" upper="163936.07">equivalent_income=Choose(ClustVar,Normal(17527.855555587706,1.4006478548197743E8),Normal(0.005755712407998498,0.030176339464326584),Normal(50.429999991478915,0.6666667466164312),Normal(0.0,1.0),Normal(0.0,1.0))</definition>
+      <discretization>
+        <interval upper="8551.457000000002"/>
+        <interval upper="25816.414000000004"/>
+        <interval upper="43081.37100000001"/>
+        <interval upper="60346.32800000001"/>
+        <interval upper="77611.285"/>
+        <interval upper="94876.242"/>
+        <interval upper="112141.199"/>
+        <interval upper="129406.15599999999"/>
+        <interval upper="146671.11299999998"/>
+        <interval upper="163936.06999999998"/>
+      </discretization>
+    </equation>
+    <cpt id="invoices_overdue">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9435361928517018 0.05646380714829825 0.7422367666440632 0.2577632333559367 0.6000000017911309 0.39999999820886906 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="afford_holidays">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.3377615968260567 0.6622384031739432 0.7315381865752453 0.2684618134247548 0.5999999964382423 0.4000000035617577 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="afford_meal">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.03118797765546374 0.9688120223445362 0.13602651226285897 0.8639734877371411 0.39999999820894955 0.6000000017910504 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="afford_unexpected">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.33395891680400197 0.6660410831959981 0.785831804696141 0.21416819530385894 0.39999999820894955 0.6000000017910504 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_phone">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.009550788533816346 0.9904492114661837 0.08161658072348074 0.9183834192765192 0.39999999820886906 0.6000000017911309 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_tv">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.005324788771371605 0.9946752112286285 0.0816146216210634 0.9183853783789366 0.39999999820886906 0.6000000017911309 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_computer">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.30503854955401605 0.694961450445984 0.5161005957563555 0.48389940424364447 0.39999999820894955 0.6000000017910504 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_washer">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.0043950528534583005 0.9956049471465416 0.0816167609404051 0.918383239059595 0.5999999964381617 0.4000000035618381 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_car">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.23243273881150714 0.7675672611884928 0.5981882931734815 0.4018117068265184 0.5999999964381617 0.4000000035618381 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_shower">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.0032117690707622877 0.9967882309292377 0.027205610609893554 0.9727943893901064 0.39999999820886906 0.6000000017911309 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="have_wc">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.0035498500255793704 0.9964501499744206 0.027205610609893554 0.9727943893901064 0.39999999820886906 0.6000000017911309 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="problem_light">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9494568967225301 0.05054310327746991 0.9319860590874255 0.06801394091257452 0.4000000035618381 0.5999999964381617 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="problem_noise">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.836445095632468 0.16355490436753195 0.742873254551688 0.257126745448312 0.4000000035618381 0.5999999964381617 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="problem_pollution">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9047405320282319 0.09525946797176811 0.8375966252327045 0.16240337476729555 0.4000000035618381 0.5999999964381617 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="problem_vandal">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.8928278610226978 0.10717213897730207 0.8912542139345278 0.10874578606547221 0.4000000035618381 0.5999999964381617 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="problem_leaks">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.8530804213937678 0.14691957860623223 0.8405329666072385 0.15946703339276147 0.4000000035618381 0.5999999964381617 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+    <cpt id="afford_heating">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.09263432024379989 0.9073656797562001 0.23122537985686428 0.7687746201431358 0.39999999820894955 0.6000000017910504 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="urban_degree">
+        <name>urban_degree</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="house_rooms">
+        <name>house_rooms</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="housing_tenure">
+        <name>housing_tenure</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="family_members">
+        <name>family_members</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="equivalent_income">
+        <name>equivalent_income</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="invoices_overdue">
+        <name>invoices_overdue</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_holidays">
+        <name>afford_holidays</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_meal">
+        <name>afford_meal</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_unexpected">
+        <name>afford_unexpected</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_phone">
+        <name>have_phone</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_tv">
+        <name>have_tv</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_computer">
+        <name>have_computer</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_washer">
+        <name>have_washer</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_car">
+        <name>have_car</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_shower">
+        <name>have_shower</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_wc">
+        <name>have_wc</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_light">
+        <name>problem_light</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_noise">
+        <name>problem_noise</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_pollution">
+        <name>problem_pollution</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_vandal">
+        <name>problem_vandal</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_leaks">
+        <name>problem_leaks</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_heating">
+        <name>afford_heating</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

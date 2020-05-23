@@ -63,19 +63,19 @@ public class Exp_Spanish_living_conditions extends MixedDataExperiment implement
         final Map<String, double[]> priors = PriorsFromData.generate(data, 1);
 
         /* Establish the prior parameters of variables using the ECH data
-            - home_ownership
-            - home_rooms
+            - housing_tenure
+            - house_rooms
             - family_members
 
             Prior parameters have been obtained in the python file "generate_priors_from_ech.ipynb"
          */
-        double[] home_ownership_prior_params = {0.53, 0.27, 0.15, 0.05};
+        double[] housing_tenure_prior_params = {0.53, 0.27, 0.15, 0.05};
         double[] family_members_prior_params = {2.52, 1, 0.5, 0.63};
-        double[] home_rooms_prior_params = {5.44, 1, 0.5, 0.68};
+        double[] house_rooms_prior_params = {5.44, 1, 0.5, 0.68};
 
-        priors.put("home_ownership", home_ownership_prior_params);
+        priors.put("housing_tenure", housing_tenure_prior_params);
         priors.put("family_members", family_members_prior_params);
-        priors.put("home_rooms", home_rooms_prior_params);
+        priors.put("house_rooms", house_rooms_prior_params);
 
         /* Filter Bayesian methods and assign them the priors */
         this.methods.stream()

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="LV_199">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.006127637823752301 0.9938723621762477 </probabilities>
+    </cpt>
+    <equation id="equivalent_income">
+      <parents>LV_199</parents>
+      <definition lower="-8713.5" upper="163936.07">equivalent_income=Choose(LV_199,Normal(0.005576441798356139,0.02956283406568205),Normal(17528.477667012445,1.400587445129706E8))</definition>
+      <discretization>
+        <interval upper="8551.457000000002"/>
+        <interval upper="25816.414000000004"/>
+        <interval upper="43081.37100000001"/>
+        <interval upper="60346.32800000001"/>
+        <interval upper="77611.285"/>
+        <interval upper="94876.242"/>
+        <interval upper="112141.199"/>
+        <interval upper="129406.15599999999"/>
+        <interval upper="146671.11299999998"/>
+        <interval upper="163936.06999999998"/>
+      </discretization>
+    </equation>
+    <cpt id="have_shower">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>LV_199</parents>
+      <probabilities>0.026691170806247975 0.9733088291937521 0.0032118822455467033 0.9967881177544533 </probabilities>
+    </cpt>
+    <cpt id="have_washer">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_shower</parents>
+      <probabilities>0.1 0.9 0.004635091859093207 0.9953649081409068 </probabilities>
+    </cpt>
+    <cpt id="afford_meal">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_washer</parents>
+      <probabilities>0.1864406779661017 0.8135593220338984 0.0310627162994851 0.9689372837005149 </probabilities>
+    </cpt>
+    <cpt id="invoices_overdue">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>afford_meal</parents>
+      <probabilities>0.7255936675461742 0.27440633245382584 0.9494230936063156 0.050576906393684395 </probabilities>
+    </cpt>
+    <cpt id="housing_tenure">
+      <state id="free_transfer"/>
+      <state id="mortgage"/>
+      <state id="property"/>
+      <state id="rent_low"/>
+      <state id="rent_normal"/>
+      <parents>invoices_overdue</parents>
+      <probabilities>0.05380846325167038 0.23652561247216036 0.5662360801781737 0.023251670378619152 0.12017817371937639 0.08802308802308802 0.25685425685425683 0.2813852813852814 0.08946608946608947 0.2842712842712843 </probabilities>
+    </cpt>
+    <cpt id="urban_degree">
+      <state id="high_pop"/>
+      <state id="low_pop"/>
+      <state id="medium_pop"/>
+      <parents>housing_tenure</parents>
+      <probabilities>0.3403298350824588 0.41679160419790107 0.24287856071964017 0.5044091710758377 0.23950617283950618 0.2560846560846561 0.5002289027926141 0.3003204639096597 0.19945063329772622 0.68 0.1723076923076923 0.1476923076923077 0.6098191214470284 0.1731266149870801 0.21705426356589147 </probabilities>
+    </cpt>
+    <cpt id="have_car">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>housing_tenure</parents>
+      <probabilities>0.2556390977443609 0.7443609022556391 0.07271443699258737 0.9272855630074126 0.26820332773622346 0.7317966722637765 0.4458204334365325 0.5541795665634675 0.3389391979301423 0.6610608020698577 </probabilities>
+    </cpt>
+    <cpt id="have_computer">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_car</parents>
+      <probabilities>0.6647584973166368 0.33524150268336317 0.19635605312259904 0.8036439468774009 </probabilities>
+    </cpt>
+    <cpt id="LV_180">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>have_car</parents>
+      <probabilities>0.553642863978924 0.4463571360210759 0.13175086268504985 0.86824913731495 </probabilities>
+    </cpt>
+    <equation id="family_members">
+      <parents>LV_180</parents>
+      <definition lower="1.0" upper="13.0">family_members=Choose(LV_180,Normal(0.9999999999999636,7.283814789343136E-4),Normal(2.9804054485193214,1.1312821219823876))</definition>
+      <discretization>
+        <interval upper="2.2"/>
+        <interval upper="3.4000000000000004"/>
+        <interval upper="4.6000000000000005"/>
+        <interval upper="5.800000000000001"/>
+        <interval upper="7.000000000000001"/>
+        <interval upper="8.200000000000001"/>
+        <interval upper="9.4"/>
+        <interval upper="10.6"/>
+        <interval upper="11.799999999999999"/>
+        <interval upper="12.999999999999998"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_179">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>LV_180</parents>
+      <probabilities>0.30547894098866585 0.17885718964465533 0.29305492122860205 0.22260894813807686 0.3696035621152394 0.29106790365726093 0.24701819472524264 0.09231033950225716 </probabilities>
+    </cpt>
+    <equation id="house_rooms">
+      <parents>LV_179</parents>
+      <definition lower="1.0" upper="6.0">house_rooms=Choose(LV_179,Normal(4.9999999999994795,4.73373030886746E-4),Normal(5.9999999999997025,6.33512832263928E-4),Normal(3.9999999999998694,6.519628880877409E-4),Normal(2.7753934762660855,0.24031472358045905))</definition>
+      <discretization>
+        <interval upper="1.5"/>
+        <interval upper="2.0"/>
+        <interval upper="2.5"/>
+        <interval upper="3.0"/>
+        <interval upper="3.5"/>
+        <interval upper="4.0"/>
+        <interval upper="4.5"/>
+        <interval upper="5.0"/>
+        <interval upper="5.5"/>
+        <interval upper="6.0"/>
+      </discretization>
+    </equation>
+    <cpt id="afford_unexpected">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>LV_179</parents>
+      <probabilities>0.323397135640816 0.676602864359184 0.22697056030139082 0.7730294396986093 0.4138853288169126 0.5861146711830875 0.4515495438962979 0.548450456103702 </probabilities>
+    </cpt>
+    <cpt id="problem_light">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>afford_meal</parents>
+      <probabilities>0.8759894459102903 0.12401055408970976 0.9516786674763599 0.04832133252364015 </probabilities>
+    </cpt>
+    <cpt id="problem_pollution">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>problem_light</parents>
+      <probabilities>0.9141744823924969 0.0858255176075031 0.7185430463576159 0.2814569536423841 </probabilities>
+    </cpt>
+    <cpt id="problem_noise">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>problem_pollution</parents>
+      <probabilities>0.8759985138398663 0.12400148616013375 0.45614035087719296 0.543859649122807 </probabilities>
+    </cpt>
+    <cpt id="problem_vandal">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>problem_pollution</parents>
+      <probabilities>0.920769087869218 0.0792309121307821 0.6280701754385964 0.3719298245614035 </probabilities>
+    </cpt>
+    <cpt id="problem_leaks">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>problem_light</parents>
+      <probabilities>0.8684303663068483 0.13156963369315167 0.5629139072847682 0.4370860927152318 </probabilities>
+    </cpt>
+    <cpt id="afford_heating">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>afford_meal</parents>
+      <probabilities>0.7308707124010554 0.2691292875989446 0.072525375206038 0.927474624793962 </probabilities>
+    </cpt>
+    <cpt id="afford_holidays">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>afford_heating</parents>
+      <probabilities>0.8283917340521114 0.17160826594788858 0.289910126934124 0.710089873065876 </probabilities>
+    </cpt>
+    <cpt id="have_phone">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_washer</parents>
+      <probabilities>0.1016949152542373 0.8983050847457628 0.009538279733265806 0.9904617202667342 </probabilities>
+    </cpt>
+    <cpt id="have_tv">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_washer</parents>
+      <probabilities>0.13559322033898305 0.864406779661017 0.005148982864860302 0.9948510171351397 </probabilities>
+    </cpt>
+    <cpt id="have_wc">
+      <state id="no"/>
+      <state id="yes"/>
+      <parents>have_shower</parents>
+      <probabilities>0.875 0.125 7.584695769425249E-4 0.9992415304230575 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="urban_degree">
+        <name>urban_degree</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="house_rooms">
+        <name>house_rooms</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="housing_tenure">
+        <name>housing_tenure</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="family_members">
+        <name>family_members</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="equivalent_income">
+        <name>equivalent_income</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="invoices_overdue">
+        <name>invoices_overdue</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_holidays">
+        <name>afford_holidays</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_meal">
+        <name>afford_meal</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_unexpected">
+        <name>afford_unexpected</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_phone">
+        <name>have_phone</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_tv">
+        <name>have_tv</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_computer">
+        <name>have_computer</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_washer">
+        <name>have_washer</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_car">
+        <name>have_car</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_shower">
+        <name>have_shower</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="have_wc">
+        <name>have_wc</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_light">
+        <name>problem_light</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_noise">
+        <name>problem_noise</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_pollution">
+        <name>problem_pollution</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_vandal">
+        <name>problem_vandal</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="problem_leaks">
+        <name>problem_leaks</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="afford_heating">
+        <name>afford_heating</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_179">
+        <name>LV_179</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_180">
+        <name>LV_180</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_199">
+        <name>LV_199</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>
