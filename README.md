@@ -25,7 +25,7 @@ Once you have installed the Java JDK and Intellij IDEA, the process is identical
 
 Once the installation has finished you should see something like this:
 
-![alt text](https://i.imgur.com/2py6OWu.png "Intellij with imported project")
+![alt text](https://i.imgur.com/dzCfC4l.png "Intellij with imported project")
 
 * The **src** directory contains the project's Java source code. It is organized in five main packages.
 	* **eu.admist** contains the AMIDST toolbox source code, which has been extended to develop the IL and CIL algorithms.
@@ -36,20 +36,33 @@ Once the installation has finished you should see something like this:
 
 * The **python-project** directory contains a series of Python notebooks that were necessary to the preparation of the "Spanish living conditions" experiment.
 
-* The **zhang_algorithms** directory contains the executables of BI and EAST algorithms. The contain the originally provided .jar files. However, in order to make it 
+* The **zhang_algorithms** directory contains the executables of BI and EAST algorithms. The contain the originally provided <code>.jar</code> files. However, in order to make it 
 more user-friendly and easier to run the experiments in our paper, we developed one python script for each algorithm that automatically executes all the experiments in the comparative
 study without needing to manually go one by one.
+
+* The **data** directory contains datasets required for executing the experiments described in the paper. Now, given that the EAST executable developed by Chen et al. requires an specific data format to work, we have prepared another folder called **data_east** with the same datasets in the specific format.
+
+* The **results** directory contains the results of the comparative and spanish living conditions experiments. In the case of the comparative study it contains a series of JSON files (one for each method and experiment) with the time and score results of each fold, and the average value. They have the following format:
+
+![alt text](https://i.imgur.com/f2iQFLV.png "Result from Bin-A of the Hiv-test experiment")
+
 
 ### How to run the comparative study
 
 Each experiment in the discrete and continuous comparative studies contains a main public method that can be executed. The process is as simple as right-clicking on the corresponding 
 experiment file and, on the pop-up, clicking on "run".
 
-![alt text](https://i.imgur.com/M1RrSAO.png "How to run the Hiv-test experiment")
+![alt text](https://i.imgur.com/mzlZ9xS.png "How to run the Hiv-test experiment")
 
 As an example, when running the Hiv-test experiment in the discrete comparative study, it should return something like this:
 
-![alt text](https://i.imgur.com/PocEwFs.png "Hiv-test execution example")
+![alt text](https://i.imgur.com/OVSDqEi.png "Hiv-test execution example")
+
+Notice that each experiment has its own script, which allows us to run them individually. In addition, we have prepared two scripts called *RunExperiments* in the discrete and continuous packages that can be executed to run all experiments at once. However, notice that there are experiments that may take days to finish, such as News_100 or Coil_42.
 
 ### How to run the Spanish living conditions experiment
+The process of running the Spanish living conditions experiment is equivalent to any other experiment, simply running its main method. The main difference of this experiment is that we have prepared another script called *Learn_Spanish_living_conditions* that generates the <code>.xdsl</code> files of the results from the IL, CIL and LCM methods. The <code>.xdsl</code> extension is one of the supported formats by the Bayesian network tool <a href="https://www.bayesfusion.com/genie/">Genie</a>, which is free for academic purposes. You can download the academia version from <a href="https://download.bayesfusion.com/files.html?category=Academia">here</a> (requires registration). 
 
+With Genie, it is possible to analyze the model and run inference. As an example, here you can see the result from the CIL algorithm with an alpha value of 10:
+
+![alt text](https://i.imgur.com/NMFkxL3.png "CIL result with alpha value of 10")
