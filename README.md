@@ -61,8 +61,10 @@ As an example, when running the Hiv-test experiment in the discrete comparative 
 Notice that each experiment has its own script, which allows us to run them individually. In addition, we have prepared two scripts called *RunExperiments* in the discrete and continuous packages that can be executed to run all experiments at once. However, notice that there are experiments that may take days to finish, such as News_100 or Coil_42.
 
 ### How to run the Spanish living conditions experiment
-The process of running the Spanish living conditions experiment is equivalent to any other experiment, simply running its main method. The main difference of this experiment is that we have prepared another script called *Learn_Spanish_living_conditions* that generates the <code>.xdsl</code> files of the results from the IL, CIL and LCM methods. The <code>.xdsl</code> extension is one of the supported formats by the Bayesian network tool <a href="https://www.bayesfusion.com/genie/">Genie</a>, which is free for academic purposes. You can download the academia version from <a href="https://download.bayesfusion.com/files.html?category=Academia">here</a> (requires registration). 
+The process of running the Spanish living conditions experiment is equivalent to any other experiment, simply running its main method. The main difference of this experiment is that we have prepared another script called *Learn_Spanish_living_conditions* that generates the <code>.xdsl</code> files of the results from the IL, CIL and LCM methods.
 
-With Genie, it is possible to analyze the model and run inference. As an example, here you can see the result from the CIL algorithm with an alpha value of 10:
+![alt text](https://i.imgur.com/48ZKz1O.png "CIL result with alpha value of 10")
 
-![alt text](https://i.imgur.com/NMFkxL3.png "CIL result with alpha value of 10")
+The <code>.xdsl</code> extension is one of the supported formats by the Bayesian network tool <a href="https://www.bayesfusion.com/genie/">Genie</a>, which is free for academic purposes. You can download the academia version from <a href="https://download.bayesfusion.com/files.html?category=Academia">here</a> (requires registration). With Genie, it is possible to analyze the model and run inference. As an example, here you can see the result from the CIL algorithm with an alpha value of 10:
+
+![alt text](https://i.imgur.com/NMFkxL3.png "CIL result with alpha value of 10 in Genie")
