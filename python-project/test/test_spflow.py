@@ -2,6 +2,7 @@ import numpy as np
 from spn.structure.Base import Context
 from spn.structure.StatisticalTypes import MetaType
 from spn.algorithms.LearningWrappers import learn_mspn
+from spn.io.Graphics import plot_spn
 
 np.random.seed(123)
 
