@@ -7,9 +7,13 @@ from methods import MSPN, KDE
 
 class Exp_Spanish_living_conditions:
 
-    # 4 attributes after filtering with 10 folds
-    meta_types = [MetaType.REAL, MetaType.REAL, MetaType.REAL, MetaType.REAL]
-    var_types_string = "cccc"
+    # 22 attributes after filtering with 10 folds
+    meta_types = [MetaType.DISCRETE, MetaType.REAL, MetaType.DISCRETE, MetaType.REAL, MetaType.REAL,
+                  MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE,
+                  MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE,
+                  MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE,
+                  MetaType.DISCRETE, MetaType.DISCRETE]
+    var_types_string = "ucuccuuuuuuuuuuuuuuuuu"
     data_name = "spanish_living_conditions"
 
     def run(self, n_folds: int, fold_log: bool):
@@ -45,13 +49,11 @@ class Exp_Spanish_living_conditions:
             ds_contexts.append(ds_context)
 
         # Apply MSPN
-        results_path = "../../../results/"+ self.data_name + "/" + str(
-            n_folds) + "_folds/MSPN/"
+        results_path = "../../../results/" + self.data_name + "/MSPN/"
         MSPN.apply(train_datasets, ds_contexts, test_datasets, n_folds, results_path, self.data_name, fold_log)
 
         # Apply KDE
-        results_path = "../../../results/run_" + str(run) + "/continuous/" + self.data_name + "/" + str(
-            n_folds) + "_folds/KDE/"
+        results_path = "../../../results/" + self.data_name + "/KDE/"
         KDE.apply(train_datasets, self.var_types_string, test_datasets, n_folds, results_path, self.data_name, fold_log)
 
 
@@ -61,8 +63,8 @@ def main():
 
     data_name = "spanish_living_conditions"
     fold_log = True
-    exp = Exp_Spanish_living_conditions(data_name)
-    exp.run(run, n_folds, fold_log)
+    exp = Exp_Spanish_living_conditions()
+    exp.run(n_folds, fold_log)
 
 
 if __name__ == "__main__":
