@@ -25,3 +25,5 @@ mspn = learn_mspn(train_data, ds_context, min_instances_slice=20)
 
 ll = log_likelihood(mspn, test_data)
 ll_total = np.sum(ll)
+
+print(ll_total) # -151.37765056020817
