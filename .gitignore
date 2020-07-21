@@ -15,3 +15,5 @@ output/
 tmp/
 zhang_algorithms/EAST/temp/
 **/.ipynb_checkpoints/
+*.pyc
+**/__pycache__/**

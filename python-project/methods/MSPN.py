@@ -4,9 +4,15 @@ import numpy as np
 import os
 import time
 import json
+import warnings
 
 
 def apply(train_datasets, ds_contexts, test_datasets, n_folds, result_path, filename, foldLog):
+
+    # Comment this if you are interested in seen the warnings, we observed that many informative warnings are
+    # thrown here, but didn't see nothing suspicious, simly executing Spflow's Mspn method
+    warnings.filterwarnings("ignore", category=RuntimeWarning)
+    warnings.filterwarnings("ignore", category=UserWarning)
 
     print("\n========================")
     print("MSPN")
@@ -17,7 +23,12 @@ def apply(train_datasets, ds_contexts, test_datasets, n_folds, result_path, file
     avg_learning_time = 0
     avg_test_ll = 0
     for i in range(1, n_folds + 1):
+
         index = i-1
+
+        # Only for MSPN:
+        ds_contexts[index].add_domains(train_datasets[index])
+
         init_time = time.time()*1000
         model = learn_mspn(train_datasets[index], ds_contexts[index], min_instances_slice=20)
         end_time = time.time()*1000
@@ -53,6 +64,8 @@ def apply(train_datasets, ds_contexts, test_datasets, n_folds, result_path, file
 
 
 def store_json(results, path, filename):
+    if not os.path.exists(path):
+        os.makedirs(path)
     if os.path.isfile(path + filename + "_results_MSPN.json"):
         os.remove(path + filename + "_results_MSPN.json")
         with open(path + filename + "_results_MSPN.json", 'w') as fp:

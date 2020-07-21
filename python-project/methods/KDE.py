@@ -52,6 +52,8 @@ def apply(train_datasets, var_types_string, test_datasets, n_folds, result_path,
 
 
 def store_json(results, path, filename):
+    if not os.path.exists(path):
+        os.makedirs(path)
     if os.path.isfile(path + filename + "_results_KDE.json"):
         os.remove(path + filename + "_results_KDE.json")
         with open(path + filename + "_results_KDE.json", 'w') as fp:
