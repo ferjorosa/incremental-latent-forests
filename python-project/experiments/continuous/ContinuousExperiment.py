@@ -24,7 +24,6 @@ class ContinuousExperiment(metaclass=ABCMeta):
         base_path = "../../../data/continuous/" + self.data_name + "/10_folds/"
         train_datasets = []
         test_datasets = []
-        train_no_missing_datasets = []
         ds_contexts = []
 
         # Prepare folds' data
