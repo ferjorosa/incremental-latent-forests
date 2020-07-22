@@ -20,35 +20,35 @@ def main():
     n_folds = 10
     fold_log = True
 
-    # exp = Exp_Iris.Exp_Iris("iris")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Buddymove.Exp_Buddymove("buddymove")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Yeast.Exp_Yeast("yeast")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Glass.Exp_Glass("glass")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Ilpd.Exp_Ilpd("ilpd")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Alcohol.Exp_Alcohol("alcohol")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Wine.Exp_Wine("wine")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Leaf.Exp_Leaf("leaf")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Nba.Exp_Nba("nba")
-    # exp.run(run, n_folds, fold_log)
-    #
-    # exp = Exp_Vehicle.Exp_Vehicle("vehicle")
-    # exp.run(run, n_folds, fold_log)
+    exp = Exp_Iris.Exp_Iris("iris")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Buddymove.Exp_Buddymove("buddymove")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Yeast.Exp_Yeast("yeast")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Glass.Exp_Glass("glass")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Ilpd.Exp_Ilpd("ilpd")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Alcohol.Exp_Alcohol("alcohol")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Wine.Exp_Wine("wine")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Leaf.Exp_Leaf("leaf")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Nba.Exp_Nba("nba")
+    exp.run(run, n_folds, fold_log)
+
+    exp = Exp_Vehicle.Exp_Vehicle("vehicle")
+    exp.run(run, n_folds, fold_log)
 
     exp = Exp_Wdbc.Exp_Wdbc("wdbc")
     exp.run(run, n_folds, fold_log)
