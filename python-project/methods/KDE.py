@@ -19,11 +19,10 @@ def apply(train_datasets, var_types_string, test_datasets, n_folds, result_path,
         index = i-1
         init_time = time.time()*1000
         model = sm.nonparametric.KDEMultivariate(data=train_datasets[index], var_type=var_types_string, bw='normal_reference')
-        end_time = time.time()*1000
-
-        learning_time = end_time - init_time
         test_ll = np.log(model.pdf(test_datasets[index]))
         test_ll = np.sum(test_ll)
+        end_time = time.time()*1000
+        learning_time = end_time - init_time
 
         fold_result = {"test_ll": test_ll, "learning_time": learning_time}
 
