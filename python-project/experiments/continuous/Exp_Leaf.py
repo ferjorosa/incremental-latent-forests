@@ -24,7 +24,7 @@ def main():
     run = 1
     n_folds = 10
 
-    data_name = "iris"
+    data_name = "leaf"
     fold_log = True
     exp = Exp_Leaf(data_name)
     exp.run(run, n_folds, fold_log)

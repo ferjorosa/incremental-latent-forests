@@ -23,7 +23,7 @@ class Exp_Spanish_living_conditions:
         print("------------------------------------------------------------------")
         print("------------------------------------------------------------------\n")
 
-        base_path = "../../../data/mixed/" + self.data_name + "/10_folds/"
+        base_path = "../../data/mixed/" + self.data_name + "/10_folds/"
         train_datasets = []
         test_datasets = []
         ds_contexts = []
@@ -49,12 +49,12 @@ class Exp_Spanish_living_conditions:
             ds_contexts.append(ds_context)
 
         # Apply MSPN
-        results_path = "../../../results/" + self.data_name + "/MSPN/"
+        results_path = "../../results/" + self.data_name + "/MSPN/"
         MSPN.apply(train_datasets, ds_contexts, test_datasets, n_folds, results_path, self.data_name, fold_log)
 
         # Apply KDE
-        results_path = "../../../results/" + self.data_name + "/KDE/"
-        KDE.apply(train_datasets, self.var_types_string, test_datasets, n_folds, results_path, self.data_name, fold_log)
+        #results_path = "../../results/" + self.data_name + "/KDE/"
+        #KDE.apply(train_datasets, self.var_types_string, test_datasets, n_folds, results_path, self.data_name, fold_log)
 
 
 def main():
