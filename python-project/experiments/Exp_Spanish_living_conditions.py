@@ -36,6 +36,8 @@ class Exp_Spanish_living_conditions:
             # Load data
             train_data = arff.loadarff(train_data_path)
             train_data = pd.DataFrame(train_data[0])
+
+
             train_data = train_data.values
             train_datasets.append(train_data)
 
