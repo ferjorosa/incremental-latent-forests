@@ -2,7 +2,7 @@ from experiments.discrete import DiscreteExperiment
 from spn.structure.StatisticalTypes import MetaType
 
 
-class Exp_webkb_336(DiscreteExperiment.DiscreteExperiment):
+class Exp_Webkb_336(DiscreteExperiment.DiscreteExperiment):
 
     # 344 attributes after filtering with 10 folds
     meta_types = [MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE, MetaType.DISCRETE,
@@ -92,7 +92,7 @@ def main():
 
     data_name = "webkb_336"
     fold_log = True
-    exp = Exp_webkb_336(data_name)
+    exp = Exp_Webkb_336(data_name)
     exp.run(run, n_folds, fold_log)
 
 
