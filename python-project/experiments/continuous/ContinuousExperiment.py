@@ -46,10 +46,10 @@ class ContinuousExperiment(metaclass=ABCMeta):
             ds_context = Context(self.meta_types)
             ds_contexts.append(ds_context)
 
-        # Apply MSPN
-        results_path = "../../../results/run_" + str(run) + "/continuous/" + self.data_name + "/" + str(n_folds) + "_folds/MSPN/"
-        MSPN.apply(train_datasets, ds_contexts, test_datasets, n_folds, results_path, self.data_name, fold_log)
-
         # Apply KDE
         results_path = "../../../results/run_" + str(run) + "/continuous/" + self.data_name + "/" + str(n_folds) + "_folds/KDE/"
         KDE.apply(train_datasets, self.var_types_string, test_datasets, n_folds, results_path, self.data_name, fold_log)
+
+        # Apply MSPN
+        results_path = "../../../results/run_" + str(run) + "/continuous/" + self.data_name + "/" + str(n_folds) + "_folds/MSPN/"
+        MSPN.apply(train_datasets, ds_contexts, test_datasets, n_folds, results_path, self.data_name, fold_log)
