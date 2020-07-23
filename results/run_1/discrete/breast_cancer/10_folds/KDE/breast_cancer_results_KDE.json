@@ -1,46 +1,46 @@
 {
     "average_learning_time": 0.000116650390625,
-    "average_test_ll": NaN,
+    "average_test_LL": NaN,
     "folds": {
         "fold_1": {
             "learning_time": 0.151123046875,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_10": {
             "learning_time": 0.104248046875,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_2": {
             "learning_time": 0.110107421875,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_3": {
             "learning_time": 0.10595703125,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_4": {
             "learning_time": 0.10400390625,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_5": {
             "learning_time": 0.1123046875,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_6": {
             "learning_time": 0.108642578125,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_7": {
             "learning_time": 0.16162109375,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_8": {
             "learning_time": 0.1044921875,
-            "test_ll": NaN
+            "test_LL": NaN
         },
         "fold_9": {
             "learning_time": 0.10400390625,
-            "test_ll": NaN
+            "test_LL": NaN
         }
     }
 }
