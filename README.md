@@ -1,7 +1,7 @@
 # bayesian-latent-forests
-[![Build Status](https://travis-ci.com/ferjorosa/bayesian-latent-forests.png?branch=master)](https://travis-ci.com/ferjorosa/bayesian-latent-forests) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://travis-ci.com/ferjorosa/incremental-latent-forests.png?branch=master)](https://travis-ci.com/ferjorosa/incremental-latent-forests) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This is the code repository of the paper **Bayesian discovery of latent forests** (IEEE Access). It includes the Java implementation of the *incremental learner* (IL) and *constrained incremental learner* (CIL) algorithms described in the paper. It also includes data and code used to run the experiments described in the paper.
+This is the code repository of the paper **Incremental learning of latent forests** (IEEE Access). It includes the Java implementation of the *incremental learner* (IL) and *constrained incremental learner* (CIL) algorithms described in the paper. It also includes data and code used to run the experiments described in the paper.
 
 Both methods are build on top of the <a href="https://github.com/amidst/toolbox">Amidst toolbox</a>, which has an implementation of the Variational Message Passing algorithm.
 
