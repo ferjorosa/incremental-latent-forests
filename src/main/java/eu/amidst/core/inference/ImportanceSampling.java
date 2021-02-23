@@ -193,7 +193,11 @@ public class ImportanceSampling implements InferenceAlgorithm, Serializable {
             weightedSampleStream.parallel();
         }
 
-        return Math.log(weightedSampleStream.mapToDouble(ws -> Math.exp(ws.weight)).filter(Double::isFinite).average().getAsDouble());
+        double likelihood = weightedSampleStream.mapToDouble(ws -> Math.exp(ws.weight)).filter(Double::isFinite).average().getAsDouble();
+        if(likelihood == 0.0)
+            return 0.0;
+
+        return Math.log(likelihood);
     }
 
     /**
