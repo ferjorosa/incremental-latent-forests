@@ -243,8 +243,6 @@ public class ConstrainedIncrementalLearner implements DiscreteMethod, Continuous
         }
         List<BayesianNetwork> models = variationalIncLearnerResults.stream().map(x->x.getFirst()).collect(Collectors.toList());
 
-        /* Show average time and score */
-        showAverageScoreAndTime(scoresAndTimes);
 
         /* Alpha */
         String alphaString = "";
@@ -255,13 +253,16 @@ public class ConstrainedIncrementalLearner implements DiscreteMethod, Continuous
 
         alphaString = alphaString.replace(".","_");
 
-        /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/spanish_living_conditions/CIL_" + alphaString,
-                dataName + "_results_CIL_"+alphaString+".json");
-
         /* Store models */
-        storeHybridModels(models, "results/spanish_living_conditions/CIL_" + alphaString,
-                dataName, "CIL_" + alphaString);
+        storeHybridModels(models, "results/run_"+ run +"/mixed/"+ dataName + "/" + folds.size()
+                + "_folds/CIL_" + alphaString , dataName, "CIL_" + alphaString);
+
+        /* Show average time and score */
+        showAverageScoreAndTime(scoresAndTimes);
+
+        /* Store experiment results in a JSON file */
+        storeResults(scoresAndTimes, "results/run_"+ run +"/mixed/"+ dataName+"/" + folds.size()
+                + "_folds/CIL_" + alphaString, dataName + "_results_CIL_"+alphaString+".json");
     }
 
     private List<Tuple4<BayesianNetwork, Double, Double, Long>> run(List<Tuple<DataOnMemory<DataInstance>, DataOnMemory<DataInstance>>> folds,

@@ -140,16 +140,16 @@ public class VariationalLCM implements DiscreteMethod, ContinuousMethod, HybridM
         }
         List<BayesianNetwork> models = results.stream().map(x->x.getFirst()).collect(Collectors.toList());
 
+        /* Store models */
+        storeHybridModels(models, "results/run_"+ run +"/mixed/"+ dataName + "/" + folds.size()
+                + "_folds/variational_LCM" , dataName, "variational_LCM");
+
         /* Show average time and score */
         showAverageScoreAndTime(scoresAndTimes);
 
-        /* Store models */
-        storeHybridModels(models, "results/spanish_living_conditions/variational_LCM",
-                dataName, "variational_LCM");
-
         /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/spanish_living_conditions/variational_LCM",
-                dataName + "_results_variational_LCM.json");
+        storeResults(scoresAndTimes, "results/run_"+ run +"/mixed/"+ dataName+"/" + folds.size()
+                + "_folds/variational_LCM", dataName + "_results_variational_LCM.json");
 
     }
 

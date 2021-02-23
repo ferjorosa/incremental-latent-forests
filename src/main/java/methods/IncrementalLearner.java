@@ -182,16 +182,16 @@ public class IncrementalLearner implements DiscreteMethod, ContinuousMethod, Hyb
         }
         List<BayesianNetwork> models = results.stream().map(x->x.getFirst()).collect(Collectors.toList());
 
+        /* Store models */
+        storeHybridModels(models, "results/run_"+ run +"/mixed/"+ dataName + "/" + folds.size()
+                + "_folds/IL", dataName, "IL");
+
         /* Show average time and score */
         showAverageScoreAndTime(scoresAndTimes);
 
-        /* Store models */
-        storeHybridModels(models, "results/spanish_living_conditions/IL",
-                dataName, "IL");
-
         /* Store experiment results in a JSON file */
-        storeResults(scoresAndTimes, "results/spanish_living_conditions/IL",
-                dataName + "_results_IL.json");
+        storeResults(scoresAndTimes, "results/run_"+ run +"/mixed/"+ dataName+"/" + folds.size()
+                + "_folds/IL", dataName + "_results_IL.json");
     }
 
     private List<Tuple4<BayesianNetwork, Double, Double, Long>> run(List<Tuple<DataOnMemory<DataInstance>, DataOnMemory<DataInstance>>> folds,
