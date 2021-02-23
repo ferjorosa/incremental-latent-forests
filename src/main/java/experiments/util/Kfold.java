@@ -34,10 +34,20 @@ public class Kfold {
         };
         */
         /* Continuous  */
+        /*
         String directory = "continuous";
         String[] fileNames = {
                 "100_plants", "alcohol", "buddymove", "geo_music", "glass", "ilpd", "ionosphere", "iris", "leaf", "nba",
                 "vehicle", "waveform", "wdbc", "wine", "yeast"
+        };
+        */
+
+        /* Mixed */
+        String directory = "mixed";
+        String[] fileNames = {
+               "arrythmia", "autos", "blood_transfusion", "breast_cancer_coimbra", "ecoli", "forest_fires", "haberman",
+                "musk", "parkinsons", "planning_relax", "qsar_biodeg", "segment", "thoracic_surgery", "thyroid",
+                "user_knowledge"
         };
 
         for(String fileName: fileNames) {
