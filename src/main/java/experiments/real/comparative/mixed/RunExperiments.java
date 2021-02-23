@@ -28,11 +28,11 @@ public class RunExperiments {
         List<CrossValidationExperiment> experimentList = new ArrayList<>();
 
         //experimentList.add(new Exp_arrythmia(methods));
-        experimentList.add(new Exp_autos(methods));
-        experimentList.add(new Exp_blood_transfusion(methods));
-        experimentList.add(new Exp_breast_cancer_coimbra(methods));
-        experimentList.add(new Exp_ecoli(methods));
-        experimentList.add(new Exp_forest_fires(methods));
+        //experimentList.add(new Exp_autos(methods)); // -Inf en el fold 3 de CIL (10)
+        //experimentList.add(new Exp_blood_transfusion(methods));
+        //experimentList.add(new Exp_breast_cancer_coimbra(methods));
+        //experimentList.add(new Exp_ecoli(methods));
+        //experimentList.add(new Exp_forest_fires(methods)); // -Inf en el fold 10 de CIL (1)
         experimentList.add(new Exp_haberman(methods));
         //experimentList.add(new Exp_musk(methods));
         experimentList.add(new Exp_haberman(methods));
