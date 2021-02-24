@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <equation id="region-centroid-col">
+      <definition lower="1.0" upper="254.0">region-centroid-col=Normal(125.4167855061605,5323.574058531498)</definition>
+      <discretization>
+        <interval upper="26.3"/>
+        <interval upper="51.6"/>
+        <interval upper="76.9"/>
+        <interval upper="102.2"/>
+        <interval upper="127.5"/>
+        <interval upper="152.8"/>
+        <interval upper="178.10000000000002"/>
+        <interval upper="203.40000000000003"/>
+        <interval upper="228.70000000000005"/>
+        <interval upper="254.00000000000006"/>
+      </discretization>
+    </equation>
+    <equation id="short-line-density-5">
+      <definition lower="0.0" upper="0.333333">short-line-density-5=Normal(0.013842347500000032,0.0015364675487204889)</definition>
+      <discretization>
+        <interval upper="0.033333299999999996"/>
+        <interval upper="0.06666659999999999"/>
+        <interval upper="0.09999989999999999"/>
+        <interval upper="0.13333319999999999"/>
+        <interval upper="0.1666665"/>
+        <interval upper="0.1999998"/>
+        <interval upper="0.23333310000000002"/>
+        <interval upper="0.2666664"/>
+        <interval upper="0.29999970000000004"/>
+        <interval upper="0.33333300000000005"/>
+      </discretization>
+    </equation>
+    <equation id="short-line-density-2">
+      <definition lower="0.0" upper="0.222222">short-line-density-2=Normal(0.004489441250000001,5.618080852990484E-4)</definition>
+      <discretization>
+        <interval upper="0.0222222"/>
+        <interval upper="0.0444444"/>
+        <interval upper="0.0666666"/>
+        <interval upper="0.0888888"/>
+        <interval upper="0.111111"/>
+        <interval upper="0.1333332"/>
+        <interval upper="0.1555554"/>
+        <interval upper="0.1777776"/>
+        <interval upper="0.1999998"/>
+        <interval upper="0.222222"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_9196">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <probabilities>0.07989694851631723 0.3506625026557219 0.0044593447780021745 0.04928209784081899 0.014221865974193377 0.03091610365808961 0.4705611365768565 </probabilities>
+    </cpt>
+    <equation id="vegde-sd">
+      <parents>LV_9196</parents>
+      <definition lower="0.0" upper="991.718">vegde-sd=Choose(LV_9196,Normal(4.128736023736191,10.487768917894353),Normal(1.5374145334616836,0.5941455102911662),Normal(119.25566875431865,10213.284690964096),Normal(6.095860946979618,36.638948651920934),Normal(248.4157646620044,54312.68864681753),Normal(5.3525645872553795,15.0413583039025),Normal(0.4210965874932893,0.10090838432553398))</definition>
+      <discretization>
+        <interval upper="99.17179999999999"/>
+        <interval upper="198.34359999999998"/>
+        <interval upper="297.5154"/>
+        <interval upper="396.68719999999996"/>
+        <interval upper="495.8589999999999"/>
+        <interval upper="595.0307999999999"/>
+        <interval upper="694.2025999999998"/>
+        <interval upper="793.3743999999998"/>
+        <interval upper="892.5461999999998"/>
+        <interval upper="991.7179999999997"/>
+      </discretization>
+    </equation>
+    <equation id="hedge-sd">
+      <parents>LV_9196</parents>
+      <definition lower="0.0" upper="1386.33">hedge-sd=Choose(LV_9196,Normal(5.467053101378372,7.727320081885261),Normal(1.9275522618730814,0.9979741155290751),Normal(0.5899510002139348,0.3165017845505496),Normal(53.51252552475358,1989.835850501606),Normal(315.690664537015,141953.0743510633),Normal(0.6894489862752294,0.12652578144844515),Normal(0.5062179458390662,0.14016428802506825))</definition>
+      <discretization>
+        <interval upper="138.63299999999998"/>
+        <interval upper="277.26599999999996"/>
+        <interval upper="415.89899999999994"/>
+        <interval upper="554.5319999999999"/>
+        <interval upper="693.165"/>
+        <interval upper="831.798"/>
+        <interval upper="970.431"/>
+        <interval upper="1109.064"/>
+        <interval upper="1247.6970000000001"/>
+        <interval upper="1386.3300000000002"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <parents>LV_9196</parents>
+      <probabilities>0.14938684858143697 0.1261020872854552 0.24935239491439526 0.1863468231533756 0.20669127073747834 0.03873502536716217 0.043385549960696525 0.14436337990572462 0.1636220545491151 0.07116933699864032 0.2308692576758139 0.2816419619069321 0.025486869806482352 0.08284713915729161 0.09377679641594228 0.2947173972107272 0.0937649165429286 0.09377248993761751 0.09375221991633353 0.09375582169649906 0.23646035827995177 0.017374091496928826 0.1632167248006204 0.20302743725771957 0.026161530076734822 0.48492000066780705 0.017678529795156425 0.08762168590503286 0.047885455865700186 0.11990954879295171 0.5916584519358916 0.04790186446552218 0.04857348103473499 0.04788740333383457 0.09618379457136474 0.03230231260687512 0.584950053073889 0.027676422384172217 0.02969798216937524 0.026176677959116743 0.026234154251836957 0.2729623975547346 0.16457406179743023 0.08866449605916886 0.15549379829975282 0.09940632807370456 0.0030041765899575332 0.2848855195450806 0.2039716196349054 </probabilities>
+    </cpt>
+    <equation id="region-centroid-row">
+      <parents>class</parents>
+      <definition lower="11.0" upper="251.0">region-centroid-row=Choose(class,Normal(102.0546075084976,805.7394111217111),Normal(97.61904761901442,1372.2409909942103),Normal(111.1786941580374,426.22767203077103),Normal(205.78666666659805,782.8620750692099),Normal(186.46979865765556,128.74076063798742),Normal(46.83552631577407,554.3391382876104),Normal(112.1973244146782,1196.336737079037))</definition>
+      <discretization>
+        <interval upper="35.0"/>
+        <interval upper="59.0"/>
+        <interval upper="83.0"/>
+        <interval upper="107.0"/>
+        <interval upper="131.0"/>
+        <interval upper="155.0"/>
+        <interval upper="179.0"/>
+        <interval upper="203.0"/>
+        <interval upper="227.0"/>
+        <interval upper="251.0"/>
+      </discretization>
+    </equation>
+    <equation id="rawblue-mean">
+      <parents>class</parents>
+      <definition lower="0.0" upper="150.889">rawblue-mean=Choose(class,Normal(18.78687798634173,113.95519700743479),Normal(56.141721428552344,344.33169396100385),Normal(12.864452780064322,233.12967633449495),Normal(13.816296999995389,27.201126359457003),Normal(60.12789161071807,144.7206319483703),Normal(134.6502138157452,85.0319126369736),Normal(13.255667488289888,146.62896074199003))</definition>
+      <discretization>
+        <interval upper="15.0889"/>
+        <interval upper="30.1778"/>
+        <interval upper="45.2667"/>
+        <interval upper="60.3556"/>
+        <interval upper="75.4445"/>
+        <interval upper="90.5334"/>
+        <interval upper="105.6223"/>
+        <interval upper="120.71119999999999"/>
+        <interval upper="135.8001"/>
+        <interval upper="150.88899999999998"/>
+      </discretization>
+    </equation>
+    <equation id="rawgreen-mean">
+      <parents>rawblue-mean</parents>
+      <definition lower="0.0" upper="142.556">rawgreen-mean=Choose(rawblue-mean)</definition>
+      <discretization>
+        <interval upper="14.255600000000001"/>
+        <interval upper="28.511200000000002"/>
+        <interval upper="42.7668"/>
+        <interval upper="57.022400000000005"/>
+        <interval upper="71.278"/>
+        <interval upper="85.5336"/>
+        <interval upper="99.78920000000001"/>
+        <interval upper="114.04480000000001"/>
+        <interval upper="128.30040000000002"/>
+        <interval upper="142.55600000000004"/>
+      </discretization>
+    </equation>
+    <equation id="rawred-mean">
+      <parents>rawgreen-mean</parents>
+      <definition lower="0.0" upper="137.111">rawred-mean=Choose(rawgreen-mean)</definition>
+      <discretization>
+        <interval upper="13.711099999999998"/>
+        <interval upper="27.422199999999997"/>
+        <interval upper="41.13329999999999"/>
+        <interval upper="54.84439999999999"/>
+        <interval upper="68.5555"/>
+        <interval upper="82.2666"/>
+        <interval upper="95.9777"/>
+        <interval upper="109.6888"/>
+        <interval upper="123.3999"/>
+        <interval upper="137.111"/>
+      </discretization>
+    </equation>
+    <equation id="intensity-mean">
+      <parents>rawred-mean</parents>
+      <definition lower="0.0" upper="143.444">intensity-mean=Choose(rawred-mean)</definition>
+      <discretization>
+        <interval upper="14.344399999999998"/>
+        <interval upper="28.688799999999997"/>
+        <interval upper="43.033199999999994"/>
+        <interval upper="57.377599999999994"/>
+        <interval upper="71.722"/>
+        <interval upper="86.06639999999999"/>
+        <interval upper="100.41079999999998"/>
+        <interval upper="114.75519999999997"/>
+        <interval upper="129.09959999999998"/>
+        <interval upper="143.444"/>
+      </discretization>
+    </equation>
+    <equation id="value-mean">
+      <parents>rawblue-mean</parents>
+      <definition lower="0.0" upper="150.889">value-mean=Choose(rawblue-mean)</definition>
+      <discretization>
+        <interval upper="15.0889"/>
+        <interval upper="30.1778"/>
+        <interval upper="45.2667"/>
+        <interval upper="60.3556"/>
+        <interval upper="75.4445"/>
+        <interval upper="90.5334"/>
+        <interval upper="105.6223"/>
+        <interval upper="120.71119999999999"/>
+        <interval upper="135.8001"/>
+        <interval upper="150.88899999999998"/>
+      </discretization>
+    </equation>
+    <equation id="exred-mean">
+      <parents>class</parents>
+      <definition lower="-49.6667" upper="9.88889">exred-mean=Choose(class,Normal(0.6560487645048959,15.722590465763183),Normal(-15.080119578226155,44.85566395457903),Normal(-9.172966938141178,57.17119052293712),Normal(-9.130369593330292,13.38790362450356),Normal(-16.09321201341742,15.252196643728434),Normal(-33.57931118419949,71.02767446828268),Normal(-6.621703698994439,32.03653295196769))</definition>
+      <discretization>
+        <interval upper="-43.711141"/>
+        <interval upper="-37.755582"/>
+        <interval upper="-31.800022999999996"/>
+        <interval upper="-25.844463999999995"/>
+        <interval upper="-19.888904999999994"/>
+        <interval upper="-13.933345999999995"/>
+        <interval upper="-7.977786999999996"/>
+        <interval upper="-2.0222279999999966"/>
+        <interval upper="3.9333310000000026"/>
+        <interval upper="9.888890000000002"/>
+      </discretization>
+    </equation>
+    <equation id="exblue-mean">
+      <parents>class</parents>
+      <definition lower="-12.4444" upper="82.0">exblue-mean=Choose(class,Normal(11.939324808869642,66.5825567628425),Normal(31.900603571417744,127.05382515196757),Normal(13.701031257727257,120.41281748532494),Normal(-4.768147626665074,13.62168079731741),Normal(34.46607013421661,63.71441916041037),Normal(50.46344835524656,162.78794306122015),Normal(12.749535290965637,97.82648216304962))</definition>
+      <discretization>
+        <interval upper="-2.9999599999999997"/>
+        <interval upper="6.44448"/>
+        <interval upper="15.88892"/>
+        <interval upper="25.33336"/>
+        <interval upper="34.7778"/>
+        <interval upper="44.22224"/>
+        <interval upper="53.66668"/>
+        <interval upper="63.11112"/>
+        <interval upper="72.55556"/>
+        <interval upper="82.0"/>
+      </discretization>
+    </equation>
+    <equation id="exgreen-mean">
+      <parents>class</parents>
+      <definition lower="-33.8889" upper="24.6667">exgreen-mean=Choose(class,Normal(-12.595374982930862,21.31114468560803),Normal(-16.820481530606532,25.166478024675992),Normal(-4.5280646632286805,14.69238446999115),Normal(13.898518336662033,15.832391694701577),Normal(-18.37285429529586,23.16102004214001),Normal(-16.884137565783917,37.173014688615),Normal(-6.127834347824037,19.072491827384525))</definition>
+      <discretization>
+        <interval upper="-28.03334"/>
+        <interval upper="-22.17778"/>
+        <interval upper="-16.322219999999998"/>
+        <interval upper="-10.466659999999997"/>
+        <interval upper="-4.611099999999998"/>
+        <interval upper="1.244460000000002"/>
+        <interval upper="7.1000200000000016"/>
+        <interval upper="12.955580000000001"/>
+        <interval upper="18.81114"/>
+        <interval upper="24.666700000000002"/>
+      </discretization>
+    </equation>
+    <equation id="saturation-mean">
+      <parents>class</parents>
+      <definition lower="0.0" upper="1.0">saturation-mean=Choose(class,Normal(0.4808151911261159,0.013359057498001278),Normal(0.3073924353740451,0.012819765356938293),Normal(0.770365230240285,0.06355466771237851),Normal(0.41474457666652864,0.012902582973782804),Normal(0.2946926644294314,0.006957155351403775),Normal(0.21239986184203513,0.010785225729564463),Normal(0.5091312675583581,0.08526398085535727))</definition>
+      <discretization>
+        <interval upper="0.1"/>
+        <interval upper="0.2"/>
+        <interval upper="0.30000000000000004"/>
+        <interval upper="0.4"/>
+        <interval upper="0.5"/>
+        <interval upper="0.6"/>
+        <interval upper="0.7"/>
+        <interval upper="0.7999999999999999"/>
+        <interval upper="0.8999999999999999"/>
+        <interval upper="0.9999999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="hue-mean">
+      <parents>class</parents>
+      <definition lower="-3.04418" upper="2.91248">hue-mean=Choose(class,Normal(-1.3469341979517575,0.13631805687337464),Normal(-2.0326476530605335,0.019900181504367905),Normal(-2.211194536081714,0.13491842396758016),Normal(2.230416766665922,0.2527302009737126),Normal(-2.07114060402615,0.0211117379417351),Normal(-2.3002969736834546,0.013091160867792365),Normal(-1.8103644715713005,0.49447671021839806))</definition>
+      <discretization>
+        <interval upper="-2.448514"/>
+        <interval upper="-1.8528479999999998"/>
+        <interval upper="-1.2571819999999998"/>
+        <interval upper="-0.6615159999999999"/>
+        <interval upper="-0.06584999999999996"/>
+        <interval upper="0.529816"/>
+        <interval upper="1.1254819999999999"/>
+        <interval upper="1.721148"/>
+        <interval upper="2.316814"/>
+        <interval upper="2.91248"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_10704">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>LV_9196</parents>
+      <probabilities>0.27530544881987945 0.6973679660491752 0.015596668103028285 0.011729917027917267 0.020223469769223998 0.9720942447260326 0.0032231281547850077 0.0044591573499584225 0.1312325560273317 0.1313370645799035 0.6068869566147499 0.13054342277801487 0.9297913016367834 0.032813349936137735 0.019067981495843284 0.01832736693123558 0.8292989974624421 0.058845894156052465 0.055936590908049595 0.055918517473455935 0.030691700464341526 0.2083110607856499 0.7307001872645603 0.03029705148544819 0.002031862383228287 0.008488284386301176 0.002166513291843047 0.9873133399386275 </probabilities>
+    </cpt>
+    <equation id="vedge-mean">
+      <parents>LV_10704</parents>
+      <definition lower="0.0" upper="29.2222">vedge-mean=Choose(LV_10704,Normal(5.30973086218996,35.16739949414926),Normal(2.0387693591226936,0.7095838957086955),Normal(8.070747481519836,25.40428797295345),Normal(0.7325222953772111,0.1612940569206192))</definition>
+      <discretization>
+        <interval upper="2.9222200000000003"/>
+        <interval upper="5.8444400000000005"/>
+        <interval upper="8.766660000000002"/>
+        <interval upper="11.688880000000001"/>
+        <interval upper="14.6111"/>
+        <interval upper="17.53332"/>
+        <interval upper="20.45554"/>
+        <interval upper="23.37776"/>
+        <interval upper="26.299979999999998"/>
+        <interval upper="29.222199999999997"/>
+      </discretization>
+    </equation>
+    <equation id="hedge-mean">
+      <parents>LV_10704</parents>
+      <definition lower="0.0" upper="44.7222">hedge-mean=Choose(LV_10704,Normal(10.733021906323772,50.75633411752243),Normal(2.5141696235350923,1.409465169220906),Normal(0.9487316829225008,0.1687914003842422),Normal(0.8542570839813889,0.24867399045927627))</definition>
+      <discretization>
+        <interval upper="4.47222"/>
+        <interval upper="8.94444"/>
+        <interval upper="13.41666"/>
+        <interval upper="17.88888"/>
+        <interval upper="22.3611"/>
+        <interval upper="26.83332"/>
+        <interval upper="31.30554"/>
+        <interval upper="35.77776"/>
+        <interval upper="40.24998"/>
+        <interval upper="44.7222"/>
+      </discretization>
+    </equation>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="region-centroid-col">
+        <name>region-centroid-col</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="region-centroid-row">
+        <name>region-centroid-row</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="short-line-density-5">
+        <name>short-line-density-5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="short-line-density-2">
+        <name>short-line-density-2</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="vedge-mean">
+        <name>vedge-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="vegde-sd">
+        <name>vegde-sd</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="hedge-mean">
+        <name>hedge-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="hedge-sd">
+        <name>hedge-sd</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="intensity-mean">
+        <name>intensity-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rawred-mean">
+        <name>rawred-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rawblue-mean">
+        <name>rawblue-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rawgreen-mean">
+        <name>rawgreen-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="exred-mean">
+        <name>exred-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="exblue-mean">
+        <name>exblue-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="exgreen-mean">
+        <name>exgreen-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="value-mean">
+        <name>value-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="saturation-mean">
+        <name>saturation-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="hue-mean">
+        <name>hue-mean</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_9196">
+        <name>LV_9196</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_10704">
+        <name>LV_10704</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

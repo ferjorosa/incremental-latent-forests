@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="dgn">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <probabilities>0.00465009947127007 0.10698633668471257 0.7372012821822392 0.10928220169563252 0.027920053310763814 0.009305063063325987 0.004654963592055917 </probabilities>
+    </cpt>
+    <equation id="pre4">
+      <definition lower="1.44" upper="6.3">pre4=Normal(3.2842019771176245,0.7740212971217317)</definition>
+      <discretization>
+        <interval upper="1.926"/>
+        <interval upper="2.412"/>
+        <interval upper="2.8979999999999997"/>
+        <interval upper="3.3839999999999995"/>
+        <interval upper="3.869999999999999"/>
+        <interval upper="4.355999999999999"/>
+        <interval upper="4.841999999999999"/>
+        <interval upper="5.3279999999999985"/>
+        <interval upper="5.813999999999998"/>
+        <interval upper="6.299999999999998"/>
+      </discretization>
+    </equation>
+    <cpt id="pre17">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.9247035887642238 0.07529641123577624 </probabilities>
+    </cpt>
+    <cpt id="pre11">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>pre17</parents>
+      <probabilities>0.8383838383838383 0.16161616161616163 0.6857142857142857 0.3142857142857143 </probabilities>
+    </cpt>
+    <cpt id="pre30">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>pre11</parents>
+      <probabilities>0.199438202247191 0.800561797752809 0.10666666666666667 0.8933333333333333 </probabilities>
+    </cpt>
+    <cpt id="pre10">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>pre30</parents>
+      <probabilities>0.5189873417721519 0.4810126582278481 0.26136363636363635 0.7386363636363636 </probabilities>
+    </cpt>
+    <cpt id="pre6">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <parents>pre10</parents>
+      <probabilities>0.7481481481481481 0.22962962962962963 0.022222222222222223 0.05333333333333334 0.8633333333333333 0.08333333333333333 </probabilities>
+    </cpt>
+    <cpt id="risk1yr">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>pre17</parents>
+      <probabilities>0.8661616161616161 0.13383838383838384 0.6857142857142857 0.3142857142857143 </probabilities>
+    </cpt>
+    <cpt id="pre14">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>risk1yr</parents>
+      <probabilities>0.3881401617250674 0.5417789757412399 0.04043126684636118 0.029649595687331536 0.22058823529411764 0.5588235294117647 0.11764705882352941 0.10294117647058823 </probabilities>
+    </cpt>
+    <equation id="age">
+      <definition lower="21.0" upper="87.0">age=Normal(62.614467081493366,78.07510483442456)</definition>
+      <discretization>
+        <interval upper="27.6"/>
+        <interval upper="34.2"/>
+        <interval upper="40.800000000000004"/>
+        <interval upper="47.400000000000006"/>
+        <interval upper="54.00000000000001"/>
+        <interval upper="60.60000000000001"/>
+        <interval upper="67.2"/>
+        <interval upper="73.8"/>
+        <interval upper="80.39999999999999"/>
+        <interval upper="86.99999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_31">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.9625226050428011 0.037477394957198915 </probabilities>
+    </cpt>
+    <equation id="pre5">
+      <parents>LV_31</parents>
+      <definition lower="0.96" upper="86.3">pre5=Choose(LV_31,Normal(2.5148020911250124,0.6031163594362439),Normal(66.3988589641224,285.8769252263284))</definition>
+      <discretization>
+        <interval upper="9.494"/>
+        <interval upper="18.028"/>
+        <interval upper="26.561999999999998"/>
+        <interval upper="35.096"/>
+        <interval upper="43.629999999999995"/>
+        <interval upper="52.163999999999994"/>
+        <interval upper="60.69799999999999"/>
+        <interval upper="69.232"/>
+        <interval upper="77.766"/>
+        <interval upper="86.30000000000001"/>
+      </discretization>
+    </equation>
+    <cpt id="pre7">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>LV_31</parents>
+      <probabilities>0.9370461326417431 0.0629538673582569 0.7222532707305356 0.27774672926946425 </probabilities>
+    </cpt>
+    <cpt id="pre8">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>pre7</parents>
+      <probabilities>0.8725 0.1275 0.5161290322580645 0.4838709677419355 </probabilities>
+    </cpt>
+    <cpt id="pre9">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>LV_31</parents>
+      <probabilities>0.9370465514306913 0.06295344856930866 0.5556033596988764 0.4443966403011236 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="dgn">
+        <name>dgn</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre4">
+        <name>pre4</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre5">
+        <name>pre5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre6">
+        <name>pre6</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre7">
+        <name>pre7</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre8">
+        <name>pre8</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre9">
+        <name>pre9</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre10">
+        <name>pre10</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre11">
+        <name>pre11</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre14">
+        <name>pre14</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre17">
+        <name>pre17</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre30">
+        <name>pre30</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="age">
+        <name>age</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="risk1yr">
+        <name>risk1yr</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_31">
+        <name>LV_31</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

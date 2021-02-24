@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.6811441736864174 0.3188558263135826 </probabilities>
+    </cpt>
+    <equation id="x">
+      <parents>ClustVar</parents>
+      <definition lower="1.0" upper="9.0">x=Choose(ClustVar,Normal(4.439443792226733,6.0035217698035686),Normal(5.196377167470922,3.9360787441417298))</definition>
+      <discretization>
+        <interval upper="1.8"/>
+        <interval upper="2.6"/>
+        <interval upper="3.4000000000000004"/>
+        <interval upper="4.2"/>
+        <interval upper="5.0"/>
+        <interval upper="5.8"/>
+        <interval upper="6.6"/>
+        <interval upper="7.3999999999999995"/>
+        <interval upper="8.2"/>
+        <interval upper="9.0"/>
+      </discretization>
+    </equation>
+    <equation id="y">
+      <parents>ClustVar</parents>
+      <definition lower="2.0" upper="9.0">y=Choose(ClustVar,Normal(4.235533995646158,1.6248821836524445),Normal(4.513439955170332,1.4825132588535406))</definition>
+      <discretization>
+        <interval upper="2.7"/>
+        <interval upper="3.4000000000000004"/>
+        <interval upper="4.1000000000000005"/>
+        <interval upper="4.800000000000001"/>
+        <interval upper="5.500000000000001"/>
+        <interval upper="6.200000000000001"/>
+        <interval upper="6.900000000000001"/>
+        <interval upper="7.600000000000001"/>
+        <interval upper="8.3"/>
+        <interval upper="9.0"/>
+      </discretization>
+    </equation>
+    <cpt id="month">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <state id="7"/>
+      <state id="8"/>
+      <state id="9"/>
+      <state id="10"/>
+      <state id="11"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.0030769779521939594 0.5231882015091907 0.0030769779521939594 0.003139773420606081 0.0030370171995680643 0.08340493698264294 0.0031226473838558565 0.0033338685047940133 0.0030370171995680643 0.0030313085206215076 0.003111230025878305 0.3654400433488866 0.06228250764981179 0.08362474045138907 0.06228250764981179 0.13079326606460473 0.018684752294943534 0.04044603400770136 0.11210851376947707 0.3425537920739545 0.018684752294943534 0.012456501529962357 0.09965201223968854 0.01643061997371177 </probabilities>
+    </cpt>
+    <cpt id="day">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.15381410480184102 0.10138440871956186 0.16596761567745774 0.18358875940109512 0.12911946474543334 0.14658432613061165 0.1195413205239992 0.17427990712660282 0.1874795057726786 0.15524042932923135 0.1956290727064204 0.07779888273845309 0.11831863690371222 0.0912535654229014 </probabilities>
+    </cpt>
+    <equation id="ffmc">
+      <parents>ClustVar</parents>
+      <definition lower="18.7" upper="96.2">ffmc=Choose(ClustVar,Normal(92.20540163143265,3.871352864658308),Normal(87.16692706572515,68.80755938789993))</definition>
+      <discretization>
+        <interval upper="26.45"/>
+        <interval upper="34.2"/>
+        <interval upper="41.95"/>
+        <interval upper="49.7"/>
+        <interval upper="57.45"/>
+        <interval upper="65.2"/>
+        <interval upper="72.95"/>
+        <interval upper="80.7"/>
+        <interval upper="88.45"/>
+        <interval upper="96.2"/>
+      </discretization>
+    </equation>
+    <equation id="dmc">
+      <parents>ClustVar</parents>
+      <definition lower="1.1" upper="291.3">dmc=Choose(ClustVar,Normal(141.9204604949412,2859.273622797467),Normal(45.73736538760233,1728.8811231414093))</definition>
+      <discretization>
+        <interval upper="30.12"/>
+        <interval upper="59.14"/>
+        <interval upper="88.16"/>
+        <interval upper="117.17999999999999"/>
+        <interval upper="146.2"/>
+        <interval upper="175.22"/>
+        <interval upper="204.24"/>
+        <interval upper="233.26000000000002"/>
+        <interval upper="262.28000000000003"/>
+        <interval upper="291.3"/>
+      </discretization>
+    </equation>
+    <equation id="dc">
+      <parents>ClustVar</parents>
+      <definition lower="7.9" upper="860.6">dc=Choose(ClustVar,Normal(657.7554906100185,8991.793079467328),Normal(238.83468025504854,57359.422361836))</definition>
+      <discretization>
+        <interval upper="93.17000000000002"/>
+        <interval upper="178.44000000000003"/>
+        <interval upper="263.71000000000004"/>
+        <interval upper="348.98"/>
+        <interval upper="434.25"/>
+        <interval upper="519.52"/>
+        <interval upper="604.79"/>
+        <interval upper="690.06"/>
+        <interval upper="775.3299999999999"/>
+        <interval upper="860.5999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="isi">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="56.1">isi=Choose(ClustVar,Normal(10.25690878713581,14.895820516924143),Normal(6.754408816613308,30.562180810977654))</definition>
+      <discretization>
+        <interval upper="5.61"/>
+        <interval upper="11.22"/>
+        <interval upper="16.830000000000002"/>
+        <interval upper="22.44"/>
+        <interval upper="28.05"/>
+        <interval upper="33.660000000000004"/>
+        <interval upper="39.27"/>
+        <interval upper="44.88"/>
+        <interval upper="50.49"/>
+        <interval upper="56.1"/>
+      </discretization>
+    </equation>
+    <equation id="temp">
+      <parents>ClustVar</parents>
+      <definition lower="2.2" upper="33.3">temp=Choose(ClustVar,Normal(21.072740340891475,21.26370998486829),Normal(14.218321421958242,34.04379481942942))</definition>
+      <discretization>
+        <interval upper="5.3100000000000005"/>
+        <interval upper="8.42"/>
+        <interval upper="11.53"/>
+        <interval upper="14.639999999999999"/>
+        <interval upper="17.75"/>
+        <interval upper="20.86"/>
+        <interval upper="23.97"/>
+        <interval upper="27.08"/>
+        <interval upper="30.189999999999998"/>
+        <interval upper="33.3"/>
+      </discretization>
+    </equation>
+    <equation id="rh">
+      <parents>ClustVar</parents>
+      <definition lower="15.0" upper="100.0">rh=Choose(ClustVar,Normal(43.73886227299848,226.19907547720072),Normal(46.33716297571412,355.5373876946379))</definition>
+      <discretization>
+        <interval upper="23.5"/>
+        <interval upper="32.0"/>
+        <interval upper="40.5"/>
+        <interval upper="49.0"/>
+        <interval upper="57.5"/>
+        <interval upper="66.0"/>
+        <interval upper="74.5"/>
+        <interval upper="83.0"/>
+        <interval upper="91.5"/>
+        <interval upper="100.0"/>
+      </discretization>
+    </equation>
+    <equation id="wind">
+      <parents>ClustVar</parents>
+      <definition lower="0.4" upper="9.4">wind=Choose(ClustVar,Normal(3.8102261560241675,2.6076527536238907),Normal(4.658993200381288,4.235846599846719))</definition>
+      <discretization>
+        <interval upper="1.3"/>
+        <interval upper="2.2"/>
+        <interval upper="3.1"/>
+        <interval upper="4.0"/>
+        <interval upper="4.9"/>
+        <interval upper="5.800000000000001"/>
+        <interval upper="6.700000000000001"/>
+        <interval upper="7.600000000000001"/>
+        <interval upper="8.500000000000002"/>
+        <interval upper="9.400000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="rain">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="6.4">rain=Choose(ClustVar,Normal(6.788116463941721E-5,2.7539897439883717E-4),Normal(0.07538287456920807,0.3001565133310415))</definition>
+      <discretization>
+        <interval upper="0.64"/>
+        <interval upper="1.28"/>
+        <interval upper="1.92"/>
+        <interval upper="2.56"/>
+        <interval upper="3.2"/>
+        <interval upper="3.8400000000000003"/>
+        <interval upper="4.48"/>
+        <interval upper="5.12"/>
+        <interval upper="5.76"/>
+        <interval upper="6.3999999999999995"/>
+      </discretization>
+    </equation>
+    <equation id="area">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="1090.84">area=Choose(ClustVar,Normal(17.19630260829819,6427.847895447027),Normal(6.140610751222901,180.94628630453815))</definition>
+      <discretization>
+        <interval upper="109.08399999999999"/>
+        <interval upper="218.16799999999998"/>
+        <interval upper="327.25199999999995"/>
+        <interval upper="436.33599999999996"/>
+        <interval upper="545.42"/>
+        <interval upper="654.5039999999999"/>
+        <interval upper="763.5879999999999"/>
+        <interval upper="872.6719999999998"/>
+        <interval upper="981.7559999999997"/>
+        <interval upper="1090.8399999999997"/>
+      </discretization>
+    </equation>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="x">
+        <name>x</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="y">
+        <name>y</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="month">
+        <name>month</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="day">
+        <name>day</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ffmc">
+        <name>ffmc</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="dmc">
+        <name>dmc</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="dc">
+        <name>dc</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="isi">
+        <name>isi</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="temp">
+        <name>temp</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rh">
+        <name>rh</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="wind">
+        <name>wind</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rain">
+        <name>rain</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="area">
+        <name>area</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.6072449078310272 0.3927550921689727 </probabilities>
+    </cpt>
+    <cpt id="make">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <state id="7"/>
+      <state id="8"/>
+      <state id="9"/>
+      <state id="10"/>
+      <state id="11"/>
+      <state id="12"/>
+      <state id="13"/>
+      <state id="14"/>
+      <state id="15"/>
+      <state id="16"/>
+      <state id="17"/>
+      <state id="18"/>
+      <state id="19"/>
+      <state id="20"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.007952961362455113 0.00806240578487422 0.008135368733153625 0.015759996828349117 0.023749810427172828 0.008317776913253078 0.023530550820108017 0.031374067760144016 0.023930516024360582 0.07059165246032405 0.015687033880072008 0.06296813733876715 0.06314958342519748 0.09412220328043207 0.03151982284594472 0.03921758470018003 0.054904618580252036 0.04798166220449929 0.17295857348600469 0.10196346986402366 0.09412220328043207 0.011330074342942718 0.011485992797203397 0.011589938433377184 0.011330074342945992 0.07832250865576619 0.1564381812884469 0.011278101524855824 0.011330074342942718 0.12296958380006054 0.011589938433377184 0.01122612870676893 0.07858131536516752 0.13445346428866528 0.011745856887637863 0.05602694124081058 0.01138204716102961 0.011485992797203397 0.08870545728985299 0.13518143576898314 0.01180103564432439 0.011745856887637863 </probabilities>
+    </cpt>
+    <cpt id="fuel-type">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.18427572640332918 0.8157242735966708 0.015548692476110404 0.9844513075238897 </probabilities>
+    </cpt>
+    <cpt id="aspiration">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.6866371042570153 0.31336289574298476 0.9691921124707231 0.030807887529276944 </probabilities>
+    </cpt>
+    <cpt id="num-of-doors">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.6203071551244652 0.3796928448755348 0.5286941762588888 0.47130582374111113 </probabilities>
+    </cpt>
+    <cpt id="body-style">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.044922578215383376 0.07177699769190311 0.2527041548077928 0.4681774687107111 0.16241880057420965 0.014008224087757227 0.027674784779204636 0.46435894894147695 0.39861195702147273 0.09534608517008854 </probabilities>
+    </cpt>
+    <cpt id="drive-wheels">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.0730847325252557 0.3876513572631833 0.539263910211561 0.014545436263582652 0.9386275559251254 0.04682700781129194 </probabilities>
+    </cpt>
+    <equation id="wheel-base">
+      <parents>ClustVar</parents>
+      <definition lower="86.6" upper="120.9">wheel-base=Choose(ClustVar,Normal(101.24255141260792,43.501330593202816),Normal(95.07742480282265,5.459403384430439))</definition>
+      <discretization>
+        <interval upper="90.03"/>
+        <interval upper="93.46000000000001"/>
+        <interval upper="96.89000000000001"/>
+        <interval upper="100.32000000000002"/>
+        <interval upper="103.75000000000003"/>
+        <interval upper="107.18000000000004"/>
+        <interval upper="110.61000000000004"/>
+        <interval upper="114.04000000000005"/>
+        <interval upper="117.47000000000006"/>
+        <interval upper="120.90000000000006"/>
+      </discretization>
+    </equation>
+    <equation id="length">
+      <parents>ClustVar</parents>
+      <definition lower="141.1" upper="208.1">length=Choose(ClustVar,Normal(179.64100468690825,116.65133132215803),Normal(164.932573435144,68.41614340366729))</definition>
+      <discretization>
+        <interval upper="147.79999999999998"/>
+        <interval upper="154.49999999999997"/>
+        <interval upper="161.19999999999996"/>
+        <interval upper="167.89999999999995"/>
+        <interval upper="174.59999999999994"/>
+        <interval upper="181.29999999999993"/>
+        <interval upper="187.99999999999991"/>
+        <interval upper="194.6999999999999"/>
+        <interval upper="201.3999999999999"/>
+        <interval upper="208.09999999999988"/>
+      </discretization>
+    </equation>
+    <equation id="width">
+      <parents>ClustVar</parents>
+      <definition lower="60.3" upper="72.0">width=Choose(ClustVar,Normal(66.72784876398119,4.084123704205834),Normal(64.4449741460776,0.8640723609278955))</definition>
+      <discretization>
+        <interval upper="61.47"/>
+        <interval upper="62.64"/>
+        <interval upper="63.81"/>
+        <interval upper="64.98"/>
+        <interval upper="66.15"/>
+        <interval upper="67.32000000000001"/>
+        <interval upper="68.49000000000001"/>
+        <interval upper="69.66000000000001"/>
+        <interval upper="70.83000000000001"/>
+        <interval upper="72.00000000000001"/>
+      </discretization>
+    </equation>
+    <equation id="height">
+      <parents>ClustVar</parents>
+      <definition lower="47.8" upper="59.8">height=Choose(ClustVar,Normal(54.39767695727227,6.791239321383332),Normal(53.0604152443775,3.3027209720433066))</definition>
+      <discretization>
+        <interval upper="49.0"/>
+        <interval upper="50.2"/>
+        <interval upper="51.400000000000006"/>
+        <interval upper="52.60000000000001"/>
+        <interval upper="53.80000000000001"/>
+        <interval upper="55.000000000000014"/>
+        <interval upper="56.20000000000002"/>
+        <interval upper="57.40000000000002"/>
+        <interval upper="58.60000000000002"/>
+        <interval upper="59.800000000000026"/>
+      </discretization>
+    </equation>
+    <equation id="curb-weight">
+      <parents>ClustVar</parents>
+      <definition lower="1488.0" upper="4066.0">curb-weight=Choose(ClustVar,Normal(2828.9176477681012,228238.4083019625),Normal(2108.2211223335244,41533.4348812887))</definition>
+      <discretization>
+        <interval upper="1745.8"/>
+        <interval upper="2003.6"/>
+        <interval upper="2261.4"/>
+        <interval upper="2519.2000000000003"/>
+        <interval upper="2777.0000000000005"/>
+        <interval upper="3034.8000000000006"/>
+        <interval upper="3292.600000000001"/>
+        <interval upper="3550.400000000001"/>
+        <interval upper="3808.200000000001"/>
+        <interval upper="4066.0000000000014"/>
+      </discretization>
+    </equation>
+    <cpt id="engine-type">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.09872151514830908 0.10764296826133485 0.5952520771761859 0.0817739786103465 0.1166094608038236 0.014418248676755214 0.014418220890325727 0.8484972964858426 0.10817968025632253 0.014486553690753811 </probabilities>
+    </cpt>
+    <cpt id="num-of-cylinders">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.044434907478620035 0.05354406351173714 0.7150389383396096 0.16027671127538248 0.008931416403202627 0.01777396299144801 0.01368468918168277 0.014087180039967555 0.9302349178973034 0.015026325375965394 0.013483443752540377 0.013483443752540377 </probabilities>
+    </cpt>
+    <equation id="engine-size">
+      <parents>ClustVar</parents>
+      <definition lower="61.0" upper="326.0">engine-size=Choose(ClustVar,Normal(143.4113722242906,2024.5484776329554),Normal(100.77408476587831,155.60496829744272))</definition>
+      <discretization>
+        <interval upper="87.5"/>
+        <interval upper="114.0"/>
+        <interval upper="140.5"/>
+        <interval upper="167.0"/>
+        <interval upper="193.5"/>
+        <interval upper="220.0"/>
+        <interval upper="246.5"/>
+        <interval upper="273.0"/>
+        <interval upper="299.5"/>
+        <interval upper="326.0"/>
+      </discretization>
+    </equation>
+    <cpt id="fuel-system">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.009290943780313915 0.09053970151880997 0.17617733017387707 0.017617733017387702 0.600668183593293 0.08808837489893055 0.017617733017387702 0.15887149826976188 0.7155851855017229 0.014490766840525544 0.013305158644482545 0.07060970034027164 0.013832531758752828 0.013305158644482545 </probabilities>
+    </cpt>
+    <equation id="bore">
+      <parents>ClustVar</parents>
+      <definition lower="2.54" upper="3.94">bore=Choose(ClustVar,Normal(3.44575020575993,0.064199403974988),Normal(3.1640686179885913,0.04365388243107444))</definition>
+      <discretization>
+        <interval upper="2.68"/>
+        <interval upper="2.8200000000000003"/>
+        <interval upper="2.9600000000000004"/>
+        <interval upper="3.1000000000000005"/>
+        <interval upper="3.2400000000000007"/>
+        <interval upper="3.380000000000001"/>
+        <interval upper="3.520000000000001"/>
+        <interval upper="3.660000000000001"/>
+        <interval upper="3.800000000000001"/>
+        <interval upper="3.9400000000000013"/>
+      </discretization>
+    </equation>
+    <equation id="stroke">
+      <parents>ClustVar</parents>
+      <definition lower="2.07" upper="4.17">stroke=Choose(ClustVar,Normal(3.28219279564034,0.12077723142537489),Normal(3.2118375027564645,0.06935415682727174))</definition>
+      <discretization>
+        <interval upper="2.28"/>
+        <interval upper="2.4899999999999998"/>
+        <interval upper="2.6999999999999997"/>
+        <interval upper="2.9099999999999997"/>
+        <interval upper="3.1199999999999997"/>
+        <interval upper="3.3299999999999996"/>
+        <interval upper="3.5399999999999996"/>
+        <interval upper="3.7499999999999996"/>
+        <interval upper="3.9599999999999995"/>
+        <interval upper="4.17"/>
+      </discretization>
+    </equation>
+    <equation id="compression-ratio">
+      <parents>ClustVar</parents>
+      <definition lower="7.0" upper="23.0">compression-ratio=Choose(ClustVar,Normal(11.057639139066733,26.490985460682804),Normal(9.10383794108306,0.3780364054927481))</definition>
+      <discretization>
+        <interval upper="8.6"/>
+        <interval upper="10.2"/>
+        <interval upper="11.799999999999999"/>
+        <interval upper="13.399999999999999"/>
+        <interval upper="14.999999999999998"/>
+        <interval upper="16.599999999999998"/>
+        <interval upper="18.2"/>
+        <interval upper="19.8"/>
+        <interval upper="21.400000000000002"/>
+        <interval upper="23.000000000000004"/>
+      </discretization>
+    </equation>
+    <equation id="horsepower">
+      <parents>ClustVar</parents>
+      <definition lower="48.0" upper="262.0">horsepower=Choose(ClustVar,Normal(118.38555866434804,1533.6542006655288),Normal(75.59239072135291,145.39739031881857))</definition>
+      <discretization>
+        <interval upper="69.4"/>
+        <interval upper="90.80000000000001"/>
+        <interval upper="112.20000000000002"/>
+        <interval upper="133.60000000000002"/>
+        <interval upper="155.00000000000003"/>
+        <interval upper="176.40000000000003"/>
+        <interval upper="197.80000000000004"/>
+        <interval upper="219.20000000000005"/>
+        <interval upper="240.60000000000005"/>
+        <interval upper="262.00000000000006"/>
+      </discretization>
+    </equation>
+    <equation id="peak-rpm">
+      <parents>ClustVar</parents>
+      <definition lower="4150.0" upper="6600.0">peak-rpm=Choose(ClustVar,Normal(5012.287296972373,235651.94186155603),Normal(5204.376101675459,164076.38837461825))</definition>
+      <discretization>
+        <interval upper="4395.0"/>
+        <interval upper="4640.0"/>
+        <interval upper="4885.0"/>
+        <interval upper="5130.0"/>
+        <interval upper="5375.0"/>
+        <interval upper="5620.0"/>
+        <interval upper="5865.0"/>
+        <interval upper="6110.0"/>
+        <interval upper="6355.0"/>
+        <interval upper="6600.0"/>
+      </discretization>
+    </equation>
+    <equation id="city-mpg">
+      <parents>ClustVar</parents>
+      <definition lower="13.0" upper="49.0">city-mpg=Choose(ClustVar,Normal(22.98613889966232,32.20100539002247),Normal(29.894999668743175,16.434762573102734))</definition>
+      <discretization>
+        <interval upper="16.6"/>
+        <interval upper="20.200000000000003"/>
+        <interval upper="23.800000000000004"/>
+        <interval upper="27.400000000000006"/>
+        <interval upper="31.000000000000007"/>
+        <interval upper="34.60000000000001"/>
+        <interval upper="38.20000000000001"/>
+        <interval upper="41.80000000000001"/>
+        <interval upper="45.40000000000001"/>
+        <interval upper="49.000000000000014"/>
+      </discretization>
+    </equation>
+    <equation id="highway-mpg">
+      <parents>ClustVar</parents>
+      <definition lower="16.0" upper="54.0">highway-mpg=Choose(ClustVar,Normal(28.131350819607206,38.080514949903325),Normal(35.77108787442137,16.75566062537343))</definition>
+      <discretization>
+        <interval upper="19.8"/>
+        <interval upper="23.6"/>
+        <interval upper="27.400000000000002"/>
+        <interval upper="31.200000000000003"/>
+        <interval upper="35.0"/>
+        <interval upper="38.8"/>
+        <interval upper="42.599999999999994"/>
+        <interval upper="46.39999999999999"/>
+        <interval upper="50.19999999999999"/>
+        <interval upper="53.999999999999986"/>
+      </discretization>
+    </equation>
+    <equation id="price">
+      <parents>ClustVar</parents>
+      <definition lower="5118.0" upper="45400.0">price=Choose(ClustVar,Normal(15766.609316542115,6.868116045107654E7),Normal(7663.490832412889,3801064.594931197))</definition>
+      <discretization>
+        <interval upper="9146.2"/>
+        <interval upper="13174.400000000001"/>
+        <interval upper="17202.600000000002"/>
+        <interval upper="21230.800000000003"/>
+        <interval upper="25259.000000000004"/>
+        <interval upper="29287.200000000004"/>
+        <interval upper="33315.4"/>
+        <interval upper="37343.6"/>
+        <interval upper="41371.799999999996"/>
+        <interval upper="45399.99999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="symboling">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.035547925982896016 0.2044005528674927 0.31312616895590734 0.09073673626137922 0.16942753046696157 0.18676108546536316 0.013617607371968645 0.014892194265896688 0.32347848652961814 0.49741062991303514 0.12229432352041195 0.028306758399069546 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="make">
+        <name>make</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="fuel-type">
+        <name>fuel-type</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="aspiration">
+        <name>aspiration</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="num-of-doors">
+        <name>num-of-doors</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="body-style">
+        <name>body-style</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="drive-wheels">
+        <name>drive-wheels</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="wheel-base">
+        <name>wheel-base</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="length">
+        <name>length</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="width">
+        <name>width</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="height">
+        <name>height</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="curb-weight">
+        <name>curb-weight</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="engine-type">
+        <name>engine-type</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="num-of-cylinders">
+        <name>num-of-cylinders</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="engine-size">
+        <name>engine-size</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="fuel-system">
+        <name>fuel-system</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="bore">
+        <name>bore</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="stroke">
+        <name>stroke</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="compression-ratio">
+        <name>compression-ratio</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="horsepower">
+        <name>horsepower</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="peak-rpm">
+        <name>peak-rpm</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="city-mpg">
+        <name>city-mpg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="highway-mpg">
+        <name>highway-mpg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="price">
+        <name>price</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="symboling">
+        <name>symboling</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

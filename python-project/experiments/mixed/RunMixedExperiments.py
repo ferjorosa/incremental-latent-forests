@@ -20,8 +20,8 @@ def main():
     n_folds = 10
     fold_log = True
 
-    exp = Exp_arrythmia.Exp_arrythmia("arryhtmia")
-    exp.run(run, n_folds, fold_log)
+    # exp = Exp_arrythmia.Exp_arrythmia("arryhtmia")
+    # exp.run(run, n_folds, fold_log)
 
     exp = Exp_autos.Exp_autos("autos")
     exp.run(run, n_folds, fold_log)
@@ -41,8 +41,8 @@ def main():
     exp = Exp_haberman.Exp_haberman("haberman")
     exp.run(run, n_folds, fold_log)
 
-    exp = Exp_musk.Exp_musk("musk")
-    exp.run(run, n_folds, fold_log)
+    # exp = Exp_musk.Exp_musk("musk")
+    # exp.run(run, n_folds, fold_log)
 
     exp = Exp_parkinsons.Exp_parkinsons("parkinsons")
     exp.run(run, n_folds, fold_log)
@@ -59,8 +59,8 @@ def main():
     exp = Exp_thoracic_surgery.Exp_thoracic_surgery("thoracic_surgery")
     exp.run(run, n_folds, fold_log)
 
-    exp = Exp_thyroid.Exp_thyroid("thyroid")
-    exp.run(run, n_folds, fold_log)
+    # exp = Exp_thyroid.Exp_thyroid("thyroid")
+    # exp.run(run, n_folds, fold_log)
 
     exp = Exp_user_knowledge.Exp_user_knowledge("user_knowledge")
     exp.run(run, n_folds, fold_log)

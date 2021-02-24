@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.9624296535614008 0.03757034643859922 </probabilities>
+    </cpt>
+    <cpt id="dgn">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.004806708248280439 0.11536780180778541 0.7308125487170952 0.10092824122069836 0.028857867013018873 0.012016770620701098 0.00721006237242066 0.04555704408172549 0.1868549070431188 0.3969488316930028 0.1414752947685271 0.13766939964406436 0.045842370036308325 0.0456521527332531 </probabilities>
+    </cpt>
+    <equation id="pre4">
+      <parents>ClustVar</parents>
+      <definition lower="1.44" upper="6.3">pre4=Choose(ClustVar,Normal(3.2624315690388705,0.7452030958315001),Normal(3.100215574819746,0.7547009771477672))</definition>
+      <discretization>
+        <interval upper="1.926"/>
+        <interval upper="2.412"/>
+        <interval upper="2.8979999999999997"/>
+        <interval upper="3.3839999999999995"/>
+        <interval upper="3.869999999999999"/>
+        <interval upper="4.355999999999999"/>
+        <interval upper="4.841999999999999"/>
+        <interval upper="5.3279999999999985"/>
+        <interval upper="5.813999999999998"/>
+        <interval upper="6.299999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="pre5">
+      <parents>ClustVar</parents>
+      <definition lower="0.96" upper="86.3">pre5=Choose(ClustVar,Normal(2.507938056794694,0.9324315074956747),Normal(61.757496496174404,549.4622270320718))</definition>
+      <discretization>
+        <interval upper="9.494"/>
+        <interval upper="18.028"/>
+        <interval upper="26.561999999999998"/>
+        <interval upper="35.096"/>
+        <interval upper="43.629999999999995"/>
+        <interval upper="52.163999999999994"/>
+        <interval upper="60.69799999999999"/>
+        <interval upper="69.232"/>
+        <interval upper="77.766"/>
+        <interval upper="86.30000000000001"/>
+      </discretization>
+    </equation>
+    <cpt id="pre6">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.26211956925498114 0.6796197166834397 0.0582607140615792 0.5159850106984208 0.425309466745589 0.058705522555990125 </probabilities>
+    </cpt>
+    <cpt id="pre7">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9367384100198968 0.06326158998010324 0.7609212206254458 0.23907877937455432 </probabilities>
+    </cpt>
+    <cpt id="pre8">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.8564535385820734 0.1435464614179265 0.5800310390333847 0.41996896096661523 </probabilities>
+    </cpt>
+    <cpt id="pre9">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9391685587117629 0.06083144128823713 0.5848255064771893 0.4151744935228106 </probabilities>
+    </cpt>
+    <cpt id="pre10">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.30653286081711467 0.6934671391828853 0.5485461906768068 0.4514538093231933 </probabilities>
+    </cpt>
+    <cpt id="pre11">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.8272458234163846 0.17275417658361536 0.931502360736825 0.06849763926317512 </probabilities>
+    </cpt>
+    <cpt id="pre14">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.3752874549606259 0.5423871804683588 0.043582314492105374 0.03874305007890998 0.28347127204827577 0.5547257906373335 0.10729472588800275 0.05450821142638775 </probabilities>
+    </cpt>
+    <cpt id="pre17">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.9197128035479988 0.0802871964520012 0.8780913562074563 0.12190864379254378 </probabilities>
+    </cpt>
+    <cpt id="pre30">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.18242669699933067 0.8175733030006693 0.36427264574665613 0.6357273542533439 </probabilities>
+    </cpt>
+    <equation id="age">
+      <parents>ClustVar</parents>
+      <definition lower="21.0" upper="87.0">age=Choose(ClustVar,Normal(62.507062250286474,76.87829046187728),Normal(59.15434534157714,68.32779756230728))</definition>
+      <discretization>
+        <interval upper="27.6"/>
+        <interval upper="34.2"/>
+        <interval upper="40.800000000000004"/>
+        <interval upper="47.400000000000006"/>
+        <interval upper="54.00000000000001"/>
+        <interval upper="60.60000000000001"/>
+        <interval upper="67.2"/>
+        <interval upper="73.8"/>
+        <interval upper="80.39999999999999"/>
+        <interval upper="86.99999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="risk1yr">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.849137100817402 0.150862899182598 0.8737423734268861 0.12625762657311385 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="dgn">
+        <name>dgn</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre4">
+        <name>pre4</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre5">
+        <name>pre5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre6">
+        <name>pre6</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre7">
+        <name>pre7</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre8">
+        <name>pre8</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre9">
+        <name>pre9</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre10">
+        <name>pre10</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre11">
+        <name>pre11</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre14">
+        <name>pre14</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre17">
+        <name>pre17</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="pre30">
+        <name>pre30</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="age">
+        <name>age</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="risk1yr">
+        <name>risk1yr</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

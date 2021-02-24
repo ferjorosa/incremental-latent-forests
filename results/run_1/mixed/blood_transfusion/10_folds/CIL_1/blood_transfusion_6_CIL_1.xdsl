@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="LV_23">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.5072701135590404 0.4927298864409597 </probabilities>
+    </cpt>
+    <equation id="R">
+      <parents>LV_23</parents>
+      <definition lower="0.0" upper="74.0">R=Choose(LV_23,Normal(14.730864619449404,61.51128811320859),Normal(2.888203333541549,1.1445711979250017))</definition>
+      <discretization>
+        <interval upper="7.4"/>
+        <interval upper="14.8"/>
+        <interval upper="22.200000000000003"/>
+        <interval upper="29.6"/>
+        <interval upper="37.0"/>
+        <interval upper="44.4"/>
+        <interval upper="51.8"/>
+        <interval upper="59.199999999999996"/>
+        <interval upper="66.6"/>
+        <interval upper="74.0"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_21">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <parents>LV_23</parents>
+      <probabilities>0.005619096028205098 0.2083357323236899 0.6149588169129377 0.005619096028205098 0.15422906665055192 0.005619096028205098 0.005619096028205098 0.005779163211321022 0.19027044499145312 0.6562782735510444 0.005779163211321022 0.1303346286122184 0.005779163211321022 0.005779163211321022 </probabilities>
+    </cpt>
+    <equation id="F">
+      <parents>LV_21</parents>
+      <definition lower="1.0" upper="50.0">F=Choose(LV_21,Normal(0.0,1.0),Normal(0.9999999999992647,0.0144927731037024),Normal(8.070127780621437,39.997356977103834),Normal(0.0,1.0),Normal(1.9999999999979166,0.020408239072315242),Normal(0.0,1.0),Normal(0.0,1.0))</definition>
+      <discretization>
+        <interval upper="5.9"/>
+        <interval upper="10.8"/>
+        <interval upper="15.700000000000001"/>
+        <interval upper="20.6"/>
+        <interval upper="25.5"/>
+        <interval upper="30.4"/>
+        <interval upper="35.3"/>
+        <interval upper="40.199999999999996"/>
+        <interval upper="45.099999999999994"/>
+        <interval upper="49.99999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="T">
+      <parents>F</parents>
+      <definition lower="2.0" upper="98.0">T=Choose(F)</definition>
+      <discretization>
+        <interval upper="11.6"/>
+        <interval upper="21.2"/>
+        <interval upper="30.799999999999997"/>
+        <interval upper="40.4"/>
+        <interval upper="50.0"/>
+        <interval upper="59.6"/>
+        <interval upper="69.2"/>
+        <interval upper="78.8"/>
+        <interval upper="88.39999999999999"/>
+        <interval upper="97.99999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="M">
+      <parents>LV_21</parents>
+      <definition lower="250.0" upper="12500.0">M=Choose(LV_21,Normal(0.0,1.0),Normal(249.99999999981623,0.014492818400409176),Normal(2017.5319451553635,2499553.284390334),Normal(0.0,1.0),Normal(499.99999999947994,0.020408493605340576),Normal(0.0,1.0),Normal(0.0,1.0))</definition>
+      <discretization>
+        <interval upper="1475.0"/>
+        <interval upper="2700.0"/>
+        <interval upper="3925.0"/>
+        <interval upper="5150.0"/>
+        <interval upper="6375.0"/>
+        <interval upper="7600.0"/>
+        <interval upper="8825.0"/>
+        <interval upper="10050.0"/>
+        <interval upper="11275.0"/>
+        <interval upper="12500.0"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>LV_21</parents>
+      <probabilities>0.5 0.5 0.8428573486966123 0.1571426513033876 0.6905829554864321 0.3094170445135678 0.5 0.5 0.8100004474882109 0.1899995525117891 0.5 0.5 0.5 0.5 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="R">
+        <name>R</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="F">
+        <name>F</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="M">
+        <name>M</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="T">
+        <name>T</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_21">
+        <name>LV_21</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_23">
+        <name>LV_23</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

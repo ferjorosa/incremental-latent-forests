@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.299627142980791 0.700372857019209 </probabilities>
+    </cpt>
+    <equation id="age">
+      <parents>ClustVar</parents>
+      <definition lower="24.0" upper="89.0">age=Choose(ClustVar,Normal(59.01298763107361,235.0478103708402),Normal(55.272825310228775,271.18758713740226))</definition>
+      <discretization>
+        <interval upper="30.5"/>
+        <interval upper="37.0"/>
+        <interval upper="43.5"/>
+        <interval upper="50.0"/>
+        <interval upper="56.5"/>
+        <interval upper="63.0"/>
+        <interval upper="69.5"/>
+        <interval upper="76.0"/>
+        <interval upper="82.5"/>
+        <interval upper="89.0"/>
+      </discretization>
+    </equation>
+    <equation id="bmi">
+      <parents>ClustVar</parents>
+      <definition lower="18.37" upper="38.57875854">bmi=Choose(ClustVar,Normal(29.452281569117027,17.58527740082552),Normal(26.360859925419238,25.948262095692908))</definition>
+      <discretization>
+        <interval upper="20.390875854"/>
+        <interval upper="22.411751708"/>
+        <interval upper="24.432627562"/>
+        <interval upper="26.453503416"/>
+        <interval upper="28.47437927"/>
+        <interval upper="30.495255124"/>
+        <interval upper="32.516130978"/>
+        <interval upper="34.537006832"/>
+        <interval upper="36.557882686000006"/>
+        <interval upper="38.57875854000001"/>
+      </discretization>
+    </equation>
+    <equation id="glucose">
+      <parents>ClustVar</parents>
+      <definition lower="60.0" upper="201.0">glucose=Choose(ClustVar,Normal(117.34226009044197,1034.2390496158534),Normal(91.08769700698429,120.52582183123675))</definition>
+      <discretization>
+        <interval upper="74.1"/>
+        <interval upper="88.19999999999999"/>
+        <interval upper="102.29999999999998"/>
+        <interval upper="116.39999999999998"/>
+        <interval upper="130.49999999999997"/>
+        <interval upper="144.59999999999997"/>
+        <interval upper="158.69999999999996"/>
+        <interval upper="172.79999999999995"/>
+        <interval upper="186.89999999999995"/>
+        <interval upper="200.99999999999994"/>
+      </discretization>
+    </equation>
+    <equation id="insulin">
+      <parents>ClustVar</parents>
+      <definition lower="2.432" upper="58.46">insulin=Choose(ClustVar,Normal(20.818113393423257,182.496164390047),Normal(5.847455598405712,8.630914025445904))</definition>
+      <discretization>
+        <interval upper="8.0348"/>
+        <interval upper="13.6376"/>
+        <interval upper="19.2404"/>
+        <interval upper="24.843200000000003"/>
+        <interval upper="30.446000000000005"/>
+        <interval upper="36.04880000000001"/>
+        <interval upper="41.65160000000001"/>
+        <interval upper="47.25440000000001"/>
+        <interval upper="52.85720000000001"/>
+        <interval upper="58.460000000000015"/>
+      </discretization>
+    </equation>
+    <equation id="homa">
+      <parents>ClustVar</parents>
+      <definition lower="0.507936" upper="25.05034187">homa=Choose(ClustVar,Normal(6.301525699014027,29.144955170019603),Normal(1.3348010348841945,0.6286352933360296))</definition>
+      <discretization>
+        <interval upper="2.962176587"/>
+        <interval upper="5.416417174"/>
+        <interval upper="7.870657761"/>
+        <interval upper="10.324898348000001"/>
+        <interval upper="12.779138935000002"/>
+        <interval upper="15.233379522000003"/>
+        <interval upper="17.687620109000004"/>
+        <interval upper="20.141860696000006"/>
+        <interval upper="22.596101283000007"/>
+        <interval upper="25.050341870000008"/>
+      </discretization>
+    </equation>
+    <equation id="leptin">
+      <parents>ClustVar</parents>
+      <definition lower="4.311" upper="90.28">leptin=Choose(ClustVar,Normal(36.022952440987225,462.22786648987284),Normal(22.446409533617114,270.2827310616316))</definition>
+      <discretization>
+        <interval upper="12.9079"/>
+        <interval upper="21.5048"/>
+        <interval upper="30.1017"/>
+        <interval upper="38.6986"/>
+        <interval upper="47.2955"/>
+        <interval upper="55.892399999999995"/>
+        <interval upper="64.4893"/>
+        <interval upper="73.0862"/>
+        <interval upper="81.68310000000001"/>
+        <interval upper="90.28000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="adiponectin">
+      <parents>ClustVar</parents>
+      <definition lower="1.65602" upper="38.04">adiponectin=Choose(ClustVar,Normal(9.83848913696857,27.269672698258933),Normal(10.84788046742467,57.53492186432906))</definition>
+      <discretization>
+        <interval upper="5.294418"/>
+        <interval upper="8.932816"/>
+        <interval upper="12.571214000000001"/>
+        <interval upper="16.209612"/>
+        <interval upper="19.84801"/>
+        <interval upper="23.486407999999997"/>
+        <interval upper="27.124805999999996"/>
+        <interval upper="30.763203999999995"/>
+        <interval upper="34.401602"/>
+        <interval upper="38.04"/>
+      </discretization>
+    </equation>
+    <equation id="resistin">
+      <parents>ClustVar</parents>
+      <definition lower="3.21" upper="82.1">resistin=Choose(ClustVar,Normal(19.562440177732483,246.73952214978087),Normal(12.454180714654072,52.74859177794085))</definition>
+      <discretization>
+        <interval upper="11.099"/>
+        <interval upper="18.988"/>
+        <interval upper="26.877"/>
+        <interval upper="34.766"/>
+        <interval upper="42.655"/>
+        <interval upper="50.544000000000004"/>
+        <interval upper="58.43300000000001"/>
+        <interval upper="66.322"/>
+        <interval upper="74.211"/>
+        <interval upper="82.1"/>
+      </discretization>
+    </equation>
+    <equation id="mcp_1">
+      <parents>ClustVar</parents>
+      <definition lower="45.843" upper="1698.44">mcp_1=Choose(ClustVar,Normal(683.4324442075706,221426.42349247987),Normal(475.90491010991553,73839.07380374783))</definition>
+      <discretization>
+        <interval upper="211.10270000000003"/>
+        <interval upper="376.36240000000004"/>
+        <interval upper="541.6221"/>
+        <interval upper="706.8818000000001"/>
+        <interval upper="872.1415000000002"/>
+        <interval upper="1037.4012000000002"/>
+        <interval upper="1202.6609000000003"/>
+        <interval upper="1367.9206000000004"/>
+        <interval upper="1533.1803000000004"/>
+        <interval upper="1698.4400000000005"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.1429461164551052 0.8570538835448949 0.5053853934683743 0.4946146065316258 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="age">
+        <name>age</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="bmi">
+        <name>bmi</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="glucose">
+        <name>glucose</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="insulin">
+        <name>insulin</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="homa">
+        <name>homa</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="leptin">
+        <name>leptin</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="adiponectin">
+        <name>adiponectin</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="resistin">
+        <name>resistin</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mcp_1">
+        <name>mcp_1</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

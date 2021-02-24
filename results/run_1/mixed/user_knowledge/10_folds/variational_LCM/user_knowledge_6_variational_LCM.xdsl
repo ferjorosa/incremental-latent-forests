@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="ClustVar">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.9915597274210931 0.008440272578906855 </probabilities>
+    </cpt>
+    <equation id="stg">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="0.99">stg=Choose(ClustVar,Normal(0.3703040542123147,0.04833600763196018),Normal(0.37114559796474533,0.04404259272582834))</definition>
+      <discretization>
+        <interval upper="0.099"/>
+        <interval upper="0.198"/>
+        <interval upper="0.29700000000000004"/>
+        <interval upper="0.396"/>
+        <interval upper="0.495"/>
+        <interval upper="0.594"/>
+        <interval upper="0.693"/>
+        <interval upper="0.7919999999999999"/>
+        <interval upper="0.8909999999999999"/>
+        <interval upper="0.9899999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="scg">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="0.9">scg=Choose(ClustVar,Normal(0.3660156977476709,0.04210908120842604),Normal(0.3556791262491889,0.0447524792580617))</definition>
+      <discretization>
+        <interval upper="0.09"/>
+        <interval upper="0.18"/>
+        <interval upper="0.27"/>
+        <interval upper="0.36"/>
+        <interval upper="0.44999999999999996"/>
+        <interval upper="0.5399999999999999"/>
+        <interval upper="0.6299999999999999"/>
+        <interval upper="0.7199999999999999"/>
+        <interval upper="0.8099999999999998"/>
+        <interval upper="0.8999999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="str">
+      <parents>ClustVar</parents>
+      <definition lower="0.02" upper="0.95">str=Choose(ClustVar,Normal(0.4658247896167699,0.058840179703333446),Normal(0.4680062298869052,0.06025113709775883))</definition>
+      <discretization>
+        <interval upper="0.113"/>
+        <interval upper="0.20600000000000002"/>
+        <interval upper="0.29900000000000004"/>
+        <interval upper="0.392"/>
+        <interval upper="0.485"/>
+        <interval upper="0.578"/>
+        <interval upper="0.6709999999999999"/>
+        <interval upper="0.7639999999999999"/>
+        <interval upper="0.8569999999999999"/>
+        <interval upper="0.9499999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="lpr">
+      <parents>ClustVar</parents>
+      <definition lower="0.01" upper="0.99">lpr=Choose(ClustVar,Normal(0.4286868062119161,0.06022830386870252),Normal(0.43271231580529596,0.06131834583981214))</definition>
+      <discretization>
+        <interval upper="0.108"/>
+        <interval upper="0.20600000000000002"/>
+        <interval upper="0.30400000000000005"/>
+        <interval upper="0.402"/>
+        <interval upper="0.5"/>
+        <interval upper="0.598"/>
+        <interval upper="0.696"/>
+        <interval upper="0.7939999999999999"/>
+        <interval upper="0.8919999999999999"/>
+        <interval upper="0.9899999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="peg">
+      <parents>ClustVar</parents>
+      <definition lower="0.0" upper="0.93">peg=Choose(ClustVar,Normal(0.46534848104222476,0.06629625637630905),Normal(0.45853530332845055,0.06487406533261124))</definition>
+      <discretization>
+        <interval upper="0.093"/>
+        <interval upper="0.186"/>
+        <interval upper="0.279"/>
+        <interval upper="0.372"/>
+        <interval upper="0.46499999999999997"/>
+        <interval upper="0.5579999999999999"/>
+        <interval upper="0.6509999999999999"/>
+        <interval upper="0.7439999999999999"/>
+        <interval upper="0.8369999999999999"/>
+        <interval upper="0.9299999999999998"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>ClustVar</parents>
+      <probabilities>0.24892569908576548 0.3164730268559024 0.34176324140877695 0.09283803264955506 0.24884665262958602 0.26413180383786605 0.26795265858073164 0.21906888495181626 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="stg">
+        <name>stg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="scg">
+        <name>scg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="str">
+        <name>str</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="lpr">
+        <name>lpr</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="peg">
+        <name>peg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ClustVar">
+        <name>ClustVar</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

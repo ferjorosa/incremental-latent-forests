@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <equation id="mdvp_fhi">
+      <definition lower="102.145" upper="592.03">mdvp_fhi=Normal(195.71121987541653,8150.904937880272)</definition>
+      <discretization>
+        <interval upper="151.1335"/>
+        <interval upper="200.122"/>
+        <interval upper="249.1105"/>
+        <interval upper="298.099"/>
+        <interval upper="347.0875"/>
+        <interval upper="396.07599999999996"/>
+        <interval upper="445.06449999999995"/>
+        <interval upper="494.05299999999994"/>
+        <interval upper="543.0414999999999"/>
+        <interval upper="592.03"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_jitter">
+      <definition lower="0.00168" upper="0.03316">mdvp_jitter=Normal(0.005913109952194704,1.8942213216796455E-5)</definition>
+      <discretization>
+        <interval upper="0.004828000000000001"/>
+        <interval upper="0.007976"/>
+        <interval upper="0.011124"/>
+        <interval upper="0.014272"/>
+        <interval upper="0.01742"/>
+        <interval upper="0.020568000000000003"/>
+        <interval upper="0.023716000000000004"/>
+        <interval upper="0.026864000000000006"/>
+        <interval upper="0.030012000000000007"/>
+        <interval upper="0.03316000000000001"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_jitter_abs">
+      <definition lower="7.0E-6" upper="2.6E-4">mdvp_jitter_abs=Normal(4.291502245400548E-5,1.1808586921876739E-9)</definition>
+      <discretization>
+        <interval upper="3.23E-5"/>
+        <interval upper="5.76E-5"/>
+        <interval upper="8.29E-5"/>
+        <interval upper="1.082E-4"/>
+        <interval upper="1.335E-4"/>
+        <interval upper="1.5879999999999998E-4"/>
+        <interval upper="1.8409999999999998E-4"/>
+        <interval upper="2.0939999999999997E-4"/>
+        <interval upper="2.3469999999999996E-4"/>
+        <interval upper="2.6E-4"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_rap">
+      <definition lower="6.8E-4" upper="0.02144">mdvp_rap=Normal(0.0031302622048384765,7.254506925309174E-6)</definition>
+      <discretization>
+        <interval upper="0.002756"/>
+        <interval upper="0.004832"/>
+        <interval upper="0.006908000000000001"/>
+        <interval upper="0.008984"/>
+        <interval upper="0.01106"/>
+        <interval upper="0.013136"/>
+        <interval upper="0.015212"/>
+        <interval upper="0.017288"/>
+        <interval upper="0.019364000000000003"/>
+        <interval upper="0.021440000000000004"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_ppq">
+      <definition lower="9.2E-4" upper="0.01958">mdvp_ppq=Normal(0.0032381715196291476,5.5958486369579524E-6)</definition>
+      <discretization>
+        <interval upper="0.0027860000000000003"/>
+        <interval upper="0.004652"/>
+        <interval upper="0.0065179999999999995"/>
+        <interval upper="0.008383999999999999"/>
+        <interval upper="0.010249999999999999"/>
+        <interval upper="0.012115999999999998"/>
+        <interval upper="0.013981999999999998"/>
+        <interval upper="0.015847999999999998"/>
+        <interval upper="0.017713999999999997"/>
+        <interval upper="0.019579999999999997"/>
+      </discretization>
+    </equation>
+    <equation id="jitter_ddp">
+      <definition lower="0.00204" upper="0.06433">jitter_ddp=Normal(0.009391525133999703,6.529330092762409E-5)</definition>
+      <discretization>
+        <interval upper="0.008269"/>
+        <interval upper="0.014498"/>
+        <interval upper="0.020727000000000002"/>
+        <interval upper="0.026956"/>
+        <interval upper="0.033185"/>
+        <interval upper="0.039414"/>
+        <interval upper="0.045642999999999996"/>
+        <interval upper="0.051871999999999995"/>
+        <interval upper="0.05810099999999999"/>
+        <interval upper="0.06433"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_shimmer">
+      <definition lower="0.00954" upper="0.11908">mdvp_shimmer=Normal(0.027481915978560048,2.7386610302176836E-4)</definition>
+      <discretization>
+        <interval upper="0.020494"/>
+        <interval upper="0.031448"/>
+        <interval upper="0.042401999999999995"/>
+        <interval upper="0.053355999999999994"/>
+        <interval upper="0.06430999999999999"/>
+        <interval upper="0.075264"/>
+        <interval upper="0.086218"/>
+        <interval upper="0.09717200000000001"/>
+        <interval upper="0.10812600000000001"/>
+        <interval upper="0.11908000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_shimmer_db">
+      <parents>mdvp_shimmer</parents>
+      <definition lower="0.085" upper="1.302">mdvp_shimmer_db=Choose(mdvp_shimmer)</definition>
+      <discretization>
+        <interval upper="0.2067"/>
+        <interval upper="0.3284"/>
+        <interval upper="0.45010000000000006"/>
+        <interval upper="0.5718000000000001"/>
+        <interval upper="0.6935000000000001"/>
+        <interval upper="0.8152000000000001"/>
+        <interval upper="0.9369000000000002"/>
+        <interval upper="1.0586000000000002"/>
+        <interval upper="1.1803000000000001"/>
+        <interval upper="1.302"/>
+      </discretization>
+    </equation>
+    <equation id="hnr">
+      <parents>mdvp_shimmer</parents>
+      <definition lower="8.441" upper="33.047">hnr=Choose(mdvp_shimmer)</definition>
+      <discretization>
+        <interval upper="10.9016"/>
+        <interval upper="13.3622"/>
+        <interval upper="15.822799999999999"/>
+        <interval upper="18.2834"/>
+        <interval upper="20.744"/>
+        <interval upper="23.2046"/>
+        <interval upper="25.6652"/>
+        <interval upper="28.125799999999998"/>
+        <interval upper="30.586399999999998"/>
+        <interval upper="33.047"/>
+      </discretization>
+    </equation>
+    <equation id="shimmer_apq3">
+      <definition lower="0.00455" upper="0.05647">shimmer_apq3=Normal(0.014575786179921769,8.632896490053612E-5)</definition>
+      <discretization>
+        <interval upper="0.009742"/>
+        <interval upper="0.014934000000000001"/>
+        <interval upper="0.020126"/>
+        <interval upper="0.025318"/>
+        <interval upper="0.030510000000000002"/>
+        <interval upper="0.035702000000000005"/>
+        <interval upper="0.04089400000000001"/>
+        <interval upper="0.04608600000000001"/>
+        <interval upper="0.05127800000000001"/>
+        <interval upper="0.05647000000000001"/>
+      </discretization>
+    </equation>
+    <equation id="shimmer_apq5">
+      <definition lower="0.0057" upper="0.0794">shimmer_apq5=Normal(0.016392363030566428,1.0606779961382636E-4)</definition>
+      <discretization>
+        <interval upper="0.01307"/>
+        <interval upper="0.02044"/>
+        <interval upper="0.02781"/>
+        <interval upper="0.03518"/>
+        <interval upper="0.042550000000000004"/>
+        <interval upper="0.049920000000000006"/>
+        <interval upper="0.05729000000000001"/>
+        <interval upper="0.06466000000000001"/>
+        <interval upper="0.07203000000000001"/>
+        <interval upper="0.07940000000000001"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_apq">
+      <definition lower="0.00719" upper="0.13778">mdvp_apq=Normal(0.021733059249601627,1.651161199210149E-4)</definition>
+      <discretization>
+        <interval upper="0.020249000000000003"/>
+        <interval upper="0.033308000000000004"/>
+        <interval upper="0.046367000000000005"/>
+        <interval upper="0.05942600000000001"/>
+        <interval upper="0.07248500000000001"/>
+        <interval upper="0.08554400000000001"/>
+        <interval upper="0.09860300000000001"/>
+        <interval upper="0.11166200000000001"/>
+        <interval upper="0.12472100000000001"/>
+        <interval upper="0.13778"/>
+      </discretization>
+    </equation>
+    <equation id="shimmer_dda">
+      <definition lower="0.01364" upper="0.16942">shimmer_dda=Normal(0.04372730291177748,7.769248361300305E-4)</definition>
+      <discretization>
+        <interval upper="0.029217999999999997"/>
+        <interval upper="0.044795999999999996"/>
+        <interval upper="0.060374"/>
+        <interval upper="0.07595199999999999"/>
+        <interval upper="0.09152999999999999"/>
+        <interval upper="0.10710799999999998"/>
+        <interval upper="0.12268599999999998"/>
+        <interval upper="0.13826399999999997"/>
+        <interval upper="0.15384199999999998"/>
+        <interval upper="0.16942"/>
+      </discretization>
+    </equation>
+    <equation id="nhr">
+      <definition lower="6.5E-4" upper="0.31482">nhr=Normal(0.02233342981312473,0.0014809229614712069)</definition>
+      <discretization>
+        <interval upper="0.032067"/>
+        <interval upper="0.063484"/>
+        <interval upper="0.094901"/>
+        <interval upper="0.12631799999999999"/>
+        <interval upper="0.157735"/>
+        <interval upper="0.189152"/>
+        <interval upper="0.220569"/>
+        <interval upper="0.251986"/>
+        <interval upper="0.28340299999999996"/>
+        <interval upper="0.31482"/>
+      </discretization>
+    </equation>
+    <cpt id="status">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.27513257522048606 0.7248674247795139 </probabilities>
+    </cpt>
+    <equation id="rpde">
+      <definition lower="0.25657" upper="0.685151">rpde=Normal(0.4901492007822684,0.010655899817611326)</definition>
+      <discretization>
+        <interval upper="0.29942810000000003"/>
+        <interval upper="0.34228620000000004"/>
+        <interval upper="0.38514430000000005"/>
+        <interval upper="0.42800240000000006"/>
+        <interval upper="0.47086050000000007"/>
+        <interval upper="0.5137186"/>
+        <interval upper="0.5565767"/>
+        <interval upper="0.5994348"/>
+        <interval upper="0.6422929"/>
+        <interval upper="0.6851510000000001"/>
+      </discretization>
+    </equation>
+    <equation id="dfa">
+      <definition lower="0.574282" upper="0.825288">dfa=Normal(0.7190735595827905,0.003018358225717976)</definition>
+      <discretization>
+        <interval upper="0.5993826"/>
+        <interval upper="0.6244832"/>
+        <interval upper="0.6495838"/>
+        <interval upper="0.6746844000000001"/>
+        <interval upper="0.6997850000000001"/>
+        <interval upper="0.7248856000000001"/>
+        <interval upper="0.7499862000000002"/>
+        <interval upper="0.7750868000000002"/>
+        <interval upper="0.8001874000000002"/>
+        <interval upper="0.8252880000000002"/>
+      </discretization>
+    </equation>
+    <equation id="spread2">
+      <definition lower="0.006274" upper="0.450493">spread2=Normal(0.21749224490801092,0.006333813217256418)</definition>
+      <discretization>
+        <interval upper="0.0506959"/>
+        <interval upper="0.0951178"/>
+        <interval upper="0.1395397"/>
+        <interval upper="0.1839616"/>
+        <interval upper="0.22838350000000002"/>
+        <interval upper="0.27280540000000003"/>
+        <interval upper="0.31722730000000005"/>
+        <interval upper="0.36164920000000006"/>
+        <interval upper="0.4060711000000001"/>
+        <interval upper="0.4504930000000001"/>
+      </discretization>
+    </equation>
+    <equation id="d2">
+      <definition lower="1.423287" upper="3.671155">d2=Normal(2.3449262151818044,0.13465778797723227)</definition>
+      <discretization>
+        <interval upper="1.6480738"/>
+        <interval upper="1.8728605999999999"/>
+        <interval upper="2.0976474"/>
+        <interval upper="2.3224342"/>
+        <interval upper="2.547221"/>
+        <interval upper="2.7720078"/>
+        <interval upper="2.9967946"/>
+        <interval upper="3.2215814"/>
+        <interval upper="3.4463681999999998"/>
+        <interval upper="3.6711549999999997"/>
+      </discretization>
+    </equation>
+    <equation id="ppe">
+      <definition lower="0.044539" upper="0.527367">ppe=Normal(0.19961306576850638,0.007410405735106201)</definition>
+      <discretization>
+        <interval upper="0.09282180000000001"/>
+        <interval upper="0.14110460000000002"/>
+        <interval upper="0.18938740000000004"/>
+        <interval upper="0.23767020000000005"/>
+        <interval upper="0.28595300000000007"/>
+        <interval upper="0.3342358000000001"/>
+        <interval upper="0.3825186000000001"/>
+        <interval upper="0.4308014000000001"/>
+        <interval upper="0.4790842000000001"/>
+        <interval upper="0.5273670000000001"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_fo">
+      <parents>ppe</parents>
+      <definition lower="88.333" upper="260.105">mdvp_fo=Choose(ppe)</definition>
+      <discretization>
+        <interval upper="105.5102"/>
+        <interval upper="122.6874"/>
+        <interval upper="139.8646"/>
+        <interval upper="157.0418"/>
+        <interval upper="174.219"/>
+        <interval upper="191.3962"/>
+        <interval upper="208.5734"/>
+        <interval upper="225.7506"/>
+        <interval upper="242.9278"/>
+        <interval upper="260.105"/>
+      </discretization>
+    </equation>
+    <equation id="mdvp_flo">
+      <parents>mdvp_fo</parents>
+      <definition lower="65.476" upper="239.17">mdvp_flo=Choose(mdvp_fo)</definition>
+      <discretization>
+        <interval upper="82.8454"/>
+        <interval upper="100.2148"/>
+        <interval upper="117.5842"/>
+        <interval upper="134.9536"/>
+        <interval upper="152.32299999999998"/>
+        <interval upper="169.69239999999996"/>
+        <interval upper="187.06179999999995"/>
+        <interval upper="204.43119999999993"/>
+        <interval upper="221.80059999999992"/>
+        <interval upper="239.1699999999999"/>
+      </discretization>
+    </equation>
+    <equation id="spread1">
+      <parents>ppe</parents>
+      <definition lower="-7.964984" upper="-2.434031">spread1=Choose(ppe)</definition>
+      <discretization>
+        <interval upper="-7.4118887"/>
+        <interval upper="-6.858793400000001"/>
+        <interval upper="-6.305698100000001"/>
+        <interval upper="-5.752602800000001"/>
+        <interval upper="-5.199507500000001"/>
+        <interval upper="-4.646412200000001"/>
+        <interval upper="-4.093316900000001"/>
+        <interval upper="-3.5402216000000015"/>
+        <interval upper="-2.9871263000000017"/>
+        <interval upper="-2.434031000000002"/>
+      </discretization>
+    </equation>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="mdvp_fo">
+        <name>mdvp_fo</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_fhi">
+        <name>mdvp_fhi</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_flo">
+        <name>mdvp_flo</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_jitter">
+        <name>mdvp_jitter</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_jitter_abs">
+        <name>mdvp_jitter_abs</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_rap">
+        <name>mdvp_rap</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_ppq">
+        <name>mdvp_ppq</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="jitter_ddp">
+        <name>jitter_ddp</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_shimmer">
+        <name>mdvp_shimmer</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_shimmer_db">
+        <name>mdvp_shimmer_db</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="shimmer_apq3">
+        <name>shimmer_apq3</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="shimmer_apq5">
+        <name>shimmer_apq5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="mdvp_apq">
+        <name>mdvp_apq</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="shimmer_dda">
+        <name>shimmer_dda</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="nhr">
+        <name>nhr</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="hnr">
+        <name>hnr</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="status">
+        <name>status</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="rpde">
+        <name>rpde</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="dfa">
+        <name>dfa</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="spread1">
+        <name>spread1</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="spread2">
+        <name>spread2</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="d2">
+        <name>d2</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="ppe">
+        <name>ppe</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

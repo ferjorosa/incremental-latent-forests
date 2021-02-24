@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <equation id="mcg">
+      <definition lower="0.0" upper="0.89">mcg=Normal(0.49684230106516264,0.03807282381525675)</definition>
+      <discretization>
+        <interval upper="0.089"/>
+        <interval upper="0.178"/>
+        <interval upper="0.267"/>
+        <interval upper="0.356"/>
+        <interval upper="0.44499999999999995"/>
+        <interval upper="0.5339999999999999"/>
+        <interval upper="0.6229999999999999"/>
+        <interval upper="0.7119999999999999"/>
+        <interval upper="0.8009999999999998"/>
+        <interval upper="0.8899999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="gvh">
+      <definition lower="0.16" upper="1.0">gvh=Normal(0.5003947368421052,0.023359334706008584)</definition>
+      <discretization>
+        <interval upper="0.244"/>
+        <interval upper="0.32799999999999996"/>
+        <interval upper="0.4119999999999999"/>
+        <interval upper="0.4959999999999999"/>
+        <interval upper="0.5799999999999998"/>
+        <interval upper="0.6639999999999998"/>
+        <interval upper="0.7479999999999998"/>
+        <interval upper="0.8319999999999997"/>
+        <interval upper="0.9159999999999997"/>
+        <interval upper="0.9999999999999997"/>
+      </discretization>
+    </equation>
+    <equation id="lip">
+      <definition lower="0.48" upper="1.0">lip=Normal(0.4954456453634079,0.007793167628282306)</definition>
+      <discretization>
+        <interval upper="0.532"/>
+        <interval upper="0.5840000000000001"/>
+        <interval upper="0.6360000000000001"/>
+        <interval upper="0.6880000000000002"/>
+        <interval upper="0.7400000000000002"/>
+        <interval upper="0.7920000000000003"/>
+        <interval upper="0.8440000000000003"/>
+        <interval upper="0.8960000000000004"/>
+        <interval upper="0.9480000000000004"/>
+        <interval upper="1.0000000000000004"/>
+      </discretization>
+    </equation>
+    <equation id="aac">
+      <definition lower="0.0" upper="0.88">aac=Normal(0.49263167684837117,0.01535074482051192)</definition>
+      <discretization>
+        <interval upper="0.088"/>
+        <interval upper="0.176"/>
+        <interval upper="0.264"/>
+        <interval upper="0.352"/>
+        <interval upper="0.43999999999999995"/>
+        <interval upper="0.5279999999999999"/>
+        <interval upper="0.6159999999999999"/>
+        <interval upper="0.7039999999999998"/>
+        <interval upper="0.7919999999999998"/>
+        <interval upper="0.8799999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="alm2">
+      <definition lower="0.0" upper="0.99">alm2=Normal(0.4718741188909772,0.039605060869172565)</definition>
+      <discretization>
+        <interval upper="0.099"/>
+        <interval upper="0.198"/>
+        <interval upper="0.29700000000000004"/>
+        <interval upper="0.396"/>
+        <interval upper="0.495"/>
+        <interval upper="0.594"/>
+        <interval upper="0.693"/>
+        <interval upper="0.7919999999999999"/>
+        <interval upper="0.8909999999999999"/>
+        <interval upper="0.9899999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="alm1">
+      <parents>alm2</parents>
+      <definition lower="0.03" upper="1.0">alm1=Choose(alm2)</definition>
+      <discretization>
+        <interval upper="0.127"/>
+        <interval upper="0.224"/>
+        <interval upper="0.321"/>
+        <interval upper="0.41800000000000004"/>
+        <interval upper="0.515"/>
+        <interval upper="0.612"/>
+        <interval upper="0.709"/>
+        <interval upper="0.8059999999999999"/>
+        <interval upper="0.9029999999999999"/>
+        <interval upper="0.9999999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <state id="7"/>
+      <probabilities>0.4628801431127012 0.14495751341681573 0.009643336314847942 0.009643336314847942 0.1157200357781753 0.0675033542039356 0.019286672629695883 0.17036560822898034 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="mcg">
+        <name>mcg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="gvh">
+        <name>gvh</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="lip">
+        <name>lip</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="aac">
+        <name>aac</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="alm1">
+        <name>alm1</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="alm2">
+        <name>alm2</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <equation id="atr2">
+      <definition lower="-1.0049" upper="1.0">atr2=Normal(-0.020177454558774555,0.14119465675264378)</definition>
+      <discretization>
+        <interval upper="-0.8044099999999998"/>
+        <interval upper="-0.6039199999999998"/>
+        <interval upper="-0.4034299999999998"/>
+        <interval upper="-0.2029399999999998"/>
+        <interval upper="-0.0024499999999997857"/>
+        <interval upper="0.19804000000000022"/>
+        <interval upper="0.3985300000000002"/>
+        <interval upper="0.5990200000000002"/>
+        <interval upper="0.7995100000000002"/>
+        <interval upper="1.0000000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="atr6">
+      <parents>atr2</parents>
+      <definition lower="-1.0729" upper="1.0">atr6=Choose(atr2)</definition>
+      <discretization>
+        <interval upper="-0.86561"/>
+        <interval upper="-0.65832"/>
+        <interval upper="-0.45103000000000004"/>
+        <interval upper="-0.24374000000000007"/>
+        <interval upper="-0.03645000000000009"/>
+        <interval upper="0.17083999999999988"/>
+        <interval upper="0.37812999999999986"/>
+        <interval upper="0.5854199999999998"/>
+        <interval upper="0.7927099999999998"/>
+        <interval upper="0.9999999999999998"/>
+      </discretization>
+    </equation>
+    <equation id="atr3">
+      <definition lower="-0.91208" upper="1.0">atr3=Normal(-0.022930409387279378,0.10546226706649164)</definition>
+      <discretization>
+        <interval upper="-0.720872"/>
+        <interval upper="-0.5296639999999999"/>
+        <interval upper="-0.3384559999999999"/>
+        <interval upper="-0.14724799999999993"/>
+        <interval upper="0.043960000000000055"/>
+        <interval upper="0.23516800000000004"/>
+        <interval upper="0.42637600000000003"/>
+        <interval upper="0.617584"/>
+        <interval upper="0.808792"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr4">
+      <parents>atr3</parents>
+      <definition lower="-1.1074" upper="1.0">atr4=Choose(atr3)</definition>
+      <discretization>
+        <interval upper="-0.8966599999999999"/>
+        <interval upper="-0.6859199999999999"/>
+        <interval upper="-0.4751799999999998"/>
+        <interval upper="-0.2644399999999998"/>
+        <interval upper="-0.053699999999999776"/>
+        <interval upper="0.15704000000000023"/>
+        <interval upper="0.3677800000000002"/>
+        <interval upper="0.5785200000000003"/>
+        <interval upper="0.7892600000000003"/>
+        <interval upper="1.0000000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="atr5">
+      <parents>atr3</parents>
+      <definition lower="-1.0777" upper="1.0">atr5=Choose(atr3)</definition>
+      <discretization>
+        <interval upper="-0.8699300000000001"/>
+        <interval upper="-0.6621600000000001"/>
+        <interval upper="-0.45439000000000007"/>
+        <interval upper="-0.24662000000000006"/>
+        <interval upper="-0.03885000000000005"/>
+        <interval upper="0.16891999999999996"/>
+        <interval upper="0.37668999999999997"/>
+        <interval upper="0.58446"/>
+        <interval upper="0.79223"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr7">
+      <definition lower="-1.651" upper="1.0">atr7=Normal(-0.02680557283050282,0.2112763674506333)</definition>
+      <discretization>
+        <interval upper="-1.3859"/>
+        <interval upper="-1.1208"/>
+        <interval upper="-0.8557"/>
+        <interval upper="-0.5906"/>
+        <interval upper="-0.3255"/>
+        <interval upper="-0.06040000000000001"/>
+        <interval upper="0.2047"/>
+        <interval upper="0.4698"/>
+        <interval upper="0.7349"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr1">
+      <parents>atr7</parents>
+      <definition lower="-2.0346" upper="1.0">atr1=Choose(atr7)</definition>
+      <discretization>
+        <interval upper="-1.7311400000000001"/>
+        <interval upper="-1.42768"/>
+        <interval upper="-1.12422"/>
+        <interval upper="-0.8207599999999999"/>
+        <interval upper="-0.5172999999999999"/>
+        <interval upper="-0.21383999999999986"/>
+        <interval upper="0.08962000000000014"/>
+        <interval upper="0.39308000000000015"/>
+        <interval upper="0.6965400000000002"/>
+        <interval upper="1.0000000000000002"/>
+      </discretization>
+    </equation>
+    <equation id="atr8">
+      <definition lower="-1.0236" upper="1.0">atr8=Normal(0.010777959207459211,0.14785443554758237)</definition>
+      <discretization>
+        <interval upper="-0.8212400000000001"/>
+        <interval upper="-0.6188800000000001"/>
+        <interval upper="-0.4165200000000001"/>
+        <interval upper="-0.2141600000000001"/>
+        <interval upper="-0.011800000000000088"/>
+        <interval upper="0.19055999999999992"/>
+        <interval upper="0.39291999999999994"/>
+        <interval upper="0.5952799999999999"/>
+        <interval upper="0.7976399999999999"/>
+        <interval upper="0.9999999999999999"/>
+      </discretization>
+    </equation>
+    <equation id="atr11">
+      <definition lower="-0.88277" upper="1.0">atr11=Normal(-0.005607505800865805,0.12252116144344789)</definition>
+      <discretization>
+        <interval upper="-0.694493"/>
+        <interval upper="-0.506216"/>
+        <interval upper="-0.31793899999999997"/>
+        <interval upper="-0.12966199999999997"/>
+        <interval upper="0.05861500000000003"/>
+        <interval upper="0.24689200000000003"/>
+        <interval upper="0.43516900000000003"/>
+        <interval upper="0.6234460000000001"/>
+        <interval upper="0.8117230000000001"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr9">
+      <parents>atr11</parents>
+      <definition lower="-1.8637" upper="1.0">atr9=Choose(atr11)</definition>
+      <discretization>
+        <interval upper="-1.57733"/>
+        <interval upper="-1.2909599999999999"/>
+        <interval upper="-1.0045899999999999"/>
+        <interval upper="-0.7182199999999999"/>
+        <interval upper="-0.4318499999999999"/>
+        <interval upper="-0.14547999999999994"/>
+        <interval upper="0.14089000000000002"/>
+        <interval upper="0.42726"/>
+        <interval upper="0.71363"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr10">
+      <parents>atr11</parents>
+      <definition lower="-1.6044" upper="1.0">atr10=Choose(atr11)</definition>
+      <discretization>
+        <interval upper="-1.34396"/>
+        <interval upper="-1.08352"/>
+        <interval upper="-0.82308"/>
+        <interval upper="-0.56264"/>
+        <interval upper="-0.3022"/>
+        <interval upper="-0.04176000000000002"/>
+        <interval upper="0.21867999999999999"/>
+        <interval upper="0.47912"/>
+        <interval upper="0.73956"/>
+        <interval upper="1.0"/>
+      </discretization>
+    </equation>
+    <equation id="atr12">
+      <definition lower="-1.087" upper="1.0">atr12=Normal(0.0015126906453546462,0.1114170715939717)</definition>
+      <discretization>
+        <interval upper="-0.8783"/>
+        <interval upper="-0.6696"/>
+        <interval upper="-0.4609"/>
+        <interval upper="-0.2522"/>
+        <interval upper="-0.04350000000000001"/>
+        <interval upper="0.16519999999999996"/>
+        <interval upper="0.3738999999999999"/>
+        <interval upper="0.5825999999999999"/>
+        <interval upper="0.7912999999999999"/>
+        <interval upper="0.9999999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.7048620151002343 0.29513798489976567 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="atr1">
+        <name>atr1</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr2">
+        <name>atr2</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr3">
+        <name>atr3</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr4">
+        <name>atr4</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr5">
+        <name>atr5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr6">
+        <name>atr6</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr7">
+        <name>atr7</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr8">
+        <name>atr8</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr9">
+        <name>atr9</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr10">
+        <name>atr10</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr11">
+        <name>atr11</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="atr12">
+        <name>atr12</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

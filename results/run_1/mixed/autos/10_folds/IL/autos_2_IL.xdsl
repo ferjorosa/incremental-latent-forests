@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <equation id="width">
+      <definition lower="60.3" upper="72.0">width=Normal(66.07310732790528,4.65869973014641)</definition>
+      <discretization>
+        <interval upper="61.47"/>
+        <interval upper="62.64"/>
+        <interval upper="63.81"/>
+        <interval upper="64.98"/>
+        <interval upper="66.15"/>
+        <interval upper="67.32000000000001"/>
+        <interval upper="68.49000000000001"/>
+        <interval upper="69.66000000000001"/>
+        <interval upper="70.83000000000001"/>
+        <interval upper="72.00000000000001"/>
+      </discretization>
+    </equation>
+    <equation id="wheel-base">
+      <parents>width</parents>
+      <definition lower="86.6" upper="120.9">wheel-base=Choose(width)</definition>
+      <discretization>
+        <interval upper="90.03"/>
+        <interval upper="93.46000000000001"/>
+        <interval upper="96.89000000000001"/>
+        <interval upper="100.32000000000002"/>
+        <interval upper="103.75000000000003"/>
+        <interval upper="107.18000000000004"/>
+        <interval upper="110.61000000000004"/>
+        <interval upper="114.04000000000005"/>
+        <interval upper="117.47000000000006"/>
+        <interval upper="120.90000000000006"/>
+      </discretization>
+    </equation>
+    <equation id="length">
+      <parents>wheel-base</parents>
+      <definition lower="141.1" upper="208.1">length=Choose(wheel-base)</definition>
+      <discretization>
+        <interval upper="147.79999999999998"/>
+        <interval upper="154.49999999999997"/>
+        <interval upper="161.19999999999996"/>
+        <interval upper="167.89999999999995"/>
+        <interval upper="174.59999999999994"/>
+        <interval upper="181.29999999999993"/>
+        <interval upper="187.99999999999991"/>
+        <interval upper="194.6999999999999"/>
+        <interval upper="201.3999999999999"/>
+        <interval upper="208.09999999999988"/>
+      </discretization>
+    </equation>
+    <equation id="height">
+      <definition lower="47.8" upper="59.8">height=Normal(54.009542561065935,5.408606792966769)</definition>
+      <discretization>
+        <interval upper="49.0"/>
+        <interval upper="50.2"/>
+        <interval upper="51.400000000000006"/>
+        <interval upper="52.60000000000001"/>
+        <interval upper="53.80000000000001"/>
+        <interval upper="55.000000000000014"/>
+        <interval upper="56.20000000000002"/>
+        <interval upper="57.40000000000002"/>
+        <interval upper="58.60000000000002"/>
+        <interval upper="59.800000000000026"/>
+      </discretization>
+    </equation>
+    <cpt id="fuel-system">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <probabilities>0.01131868131868132 0.320467032967033 0.11043956043956045 0.005549450549450549 0.48596153846153844 0.055219780219780225 0.011043956043956043 </probabilities>
+    </cpt>
+    <cpt id="fuel-type">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>fuel-system</parents>
+      <probabilities>0.4 0.6 0.03278688524590164 0.9672131147540983 0.9130434782608695 0.08695652173913043 0.5 0.5 0.02197802197802198 0.978021978021978 0.15384615384615385 0.8461538461538461 0.4 0.6 </probabilities>
+    </cpt>
+    <equation id="compression-ratio">
+      <parents>fuel-type</parents>
+      <definition lower="7.0" upper="23.0">compression-ratio=Choose(fuel-type,Normal(21.968421052515957,0.6543358418972015),Normal(8.82522580644592,0.4516017013029457))</definition>
+      <discretization>
+        <interval upper="8.6"/>
+        <interval upper="10.2"/>
+        <interval upper="11.799999999999999"/>
+        <interval upper="13.399999999999999"/>
+        <interval upper="14.999999999999998"/>
+        <interval upper="16.599999999999998"/>
+        <interval upper="18.2"/>
+        <interval upper="19.8"/>
+        <interval upper="21.400000000000002"/>
+        <interval upper="23.000000000000004"/>
+      </discretization>
+    </equation>
+    <cpt id="aspiration">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>fuel-system</parents>
+      <probabilities>0.6 0.4 0.9672131147540983 0.03278688524590164 0.34782608695652173 0.6521739130434783 0.5 0.5 0.8461538461538461 0.15384615384615385 0.23076923076923078 0.7692307692307693 0.6 0.4 </probabilities>
+    </cpt>
+    <cpt id="num-of-doors">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>fuel-system</parents>
+      <probabilities>0.6 0.4 0.5573770491803278 0.4426229508196721 0.782608695652174 0.21739130434782608 0.5 0.5 0.6043956043956044 0.3956043956043956 0.3076923076923077 0.6923076923076923 0.4 0.6 </probabilities>
+    </cpt>
+    <cpt id="body-style">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <parents>num-of-doors</parents>
+      <probabilities>0.017543859649122806 0.017543859649122806 0.09649122807017543 0.6578947368421053 0.21052631578947367 0.1 0.125 0.55 0.2 0.025 </probabilities>
+    </cpt>
+    <cpt id="symboling">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <parents>num-of-doors</parents>
+      <probabilities>0.04310344827586207 0.19827586206896552 0.47413793103448276 0.16379310344827586 0.10344827586206896 0.017241379310344827 0.024390243902439025 0.024390243902439025 0.07317073170731707 0.32926829268292684 0.25609756097560976 0.2926829268292683 </probabilities>
+    </cpt>
+    <cpt id="drive-wheels">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <parents>fuel-system</parents>
+      <probabilities>0.2857142857142857 0.42857142857142855 0.2857142857142857 0.1111111111111111 0.8095238095238095 0.07936507936507936 0.08 0.4 0.52 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.053763440860215055 0.3333333333333333 0.6129032258064516 0.13333333333333333 0.6666666666666666 0.2 0.2857142857142857 0.2857142857142857 0.42857142857142855 </probabilities>
+    </cpt>
+    <cpt id="num-of-cylinders">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <parents>fuel-system</parents>
+      <probabilities>0.15384615384615385 0.15384615384615385 0.23076923076923078 0.15384615384615385 0.15384615384615385 0.15384615384615385 0.028985507246376812 0.028985507246376812 0.8405797101449275 0.028985507246376812 0.043478260869565216 0.028985507246376812 0.06451612903225806 0.1935483870967742 0.5161290322580645 0.0967741935483871 0.06451612903225806 0.06451612903225806 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.16666666666666666 0.06060606060606061 0.08080808080808081 0.5555555555555556 0.25252525252525254 0.020202020202020204 0.030303030303030304 0.09523809523809523 0.09523809523809523 0.5238095238095238 0.09523809523809523 0.09523809523809523 0.09523809523809523 0.15384615384615385 0.15384615384615385 0.23076923076923078 0.15384615384615385 0.15384615384615385 0.15384615384615385 </probabilities>
+    </cpt>
+    <cpt id="engine-type">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <parents>num-of-cylinders</parents>
+      <probabilities>0.14285714285714285 0.14285714285714285 0.14285714285714285 0.14285714285714285 0.42857142857142855 0.1 0.1 0.6 0.1 0.1 0.05555555555555555 0.09027777777777778 0.7430555555555556 0.09722222222222222 0.013888888888888888 0.23529411764705882 0.058823529411764705 0.2647058823529412 0.14705882352941177 0.29411764705882354 0.18181818181818182 0.2727272727272727 0.18181818181818182 0.18181818181818182 0.18181818181818182 0.18181818181818182 0.18181818181818182 0.18181818181818182 0.18181818181818182 0.2727272727272727 </probabilities>
+    </cpt>
+    <cpt id="make">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <state id="4"/>
+      <state id="5"/>
+      <state id="6"/>
+      <state id="7"/>
+      <state id="8"/>
+      <state id="9"/>
+      <state id="10"/>
+      <state id="11"/>
+      <state id="12"/>
+      <state id="13"/>
+      <state id="14"/>
+      <state id="15"/>
+      <state id="16"/>
+      <state id="17"/>
+      <state id="18"/>
+      <state id="19"/>
+      <state id="20"/>
+      <parents>engine-type</parents>
+      <probabilities>0.07407407407407407 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.07407407407407407 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.07407407407407407 0.037037037037037035 0.14814814814814814 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.05555555555555555 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.24074074074074073 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.037037037037037035 0.012195121951219513 0.04878048780487805 0.06097560975609756 0.018292682926829267 0.012195121951219513 0.03048780487804878 0.024390243902439025 0.012195121951219513 0.08536585365853659 0.036585365853658534 0.018292682926829267 0.09146341463414634 0.08536585365853659 0.012195121951219513 0.054878048780487805 0.018292682926829267 0.036585365853658534 0.012195121951219513 0.17073170731707318 0.08536585365853659 0.07317073170731707 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.08771929824561403 0.03508771929824561 0.24561403508771928 0.03508771929824561 0.03508771929824561 0.03508771929824561 0.05454545454545454 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.05454545454545454 0.03636363636363636 0.10909090909090909 0.03636363636363636 0.03636363636363636 0.14545454545454545 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.03636363636363636 0.05454545454545454 </probabilities>
+    </cpt>
+    <equation id="horsepower">
+      <parents>fuel-system</parents>
+      <definition lower="48.0" upper="262.0">horsepower=Choose(fuel-system,Normal(85.9999999914,0.6666669132000607),Normal(73.43859649109923,96.4412726823495),Normal(85.52631578902354,588.7969925160342),Normal(0.0,1.0),Normal(130.48275862053967,1255.3452150520627),Normal(125.77777777638025,263.4141415579599),Normal(89.999999991,0.666666936666843))</definition>
+      <discretization>
+        <interval upper="69.4"/>
+        <interval upper="90.80000000000001"/>
+        <interval upper="112.20000000000002"/>
+        <interval upper="133.60000000000002"/>
+        <interval upper="155.00000000000003"/>
+        <interval upper="176.40000000000003"/>
+        <interval upper="197.80000000000004"/>
+        <interval upper="219.20000000000005"/>
+        <interval upper="240.60000000000005"/>
+        <interval upper="262.00000000000006"/>
+      </discretization>
+    </equation>
+    <equation id="engine-size">
+      <parents>horsepower</parents>
+      <definition lower="61.0" upper="326.0">engine-size=Choose(horsepower)</definition>
+      <discretization>
+        <interval upper="87.5"/>
+        <interval upper="114.0"/>
+        <interval upper="140.5"/>
+        <interval upper="167.0"/>
+        <interval upper="193.5"/>
+        <interval upper="220.0"/>
+        <interval upper="246.5"/>
+        <interval upper="273.0"/>
+        <interval upper="299.5"/>
+        <interval upper="326.0"/>
+      </discretization>
+    </equation>
+    <equation id="curb-weight">
+      <parents>engine-size</parents>
+      <definition lower="1488.0" upper="4066.0">curb-weight=Choose(engine-size)</definition>
+      <discretization>
+        <interval upper="1745.8"/>
+        <interval upper="2003.6"/>
+        <interval upper="2261.4"/>
+        <interval upper="2519.2000000000003"/>
+        <interval upper="2777.0000000000005"/>
+        <interval upper="3034.8000000000006"/>
+        <interval upper="3292.600000000001"/>
+        <interval upper="3550.400000000001"/>
+        <interval upper="3808.200000000001"/>
+        <interval upper="4066.0000000000014"/>
+      </discretization>
+    </equation>
+    <equation id="price">
+      <parents>engine-size</parents>
+      <definition lower="5118.0" upper="45400.0">price=Choose(engine-size)</definition>
+      <discretization>
+        <interval upper="9146.2"/>
+        <interval upper="13174.400000000001"/>
+        <interval upper="17202.600000000002"/>
+        <interval upper="21230.800000000003"/>
+        <interval upper="25259.000000000004"/>
+        <interval upper="29287.200000000004"/>
+        <interval upper="33315.4"/>
+        <interval upper="37343.6"/>
+        <interval upper="41371.799999999996"/>
+        <interval upper="45399.99999999999"/>
+      </discretization>
+    </equation>
+    <equation id="highway-mpg">
+      <parents>horsepower</parents>
+      <definition lower="16.0" upper="54.0">highway-mpg=Choose(horsepower)</definition>
+      <discretization>
+        <interval upper="19.8"/>
+        <interval upper="23.6"/>
+        <interval upper="27.400000000000002"/>
+        <interval upper="31.200000000000003"/>
+        <interval upper="35.0"/>
+        <interval upper="38.8"/>
+        <interval upper="42.599999999999994"/>
+        <interval upper="46.39999999999999"/>
+        <interval upper="50.19999999999999"/>
+        <interval upper="53.999999999999986"/>
+      </discretization>
+    </equation>
+    <equation id="city-mpg">
+      <parents>highway-mpg</parents>
+      <definition lower="13.0" upper="49.0">city-mpg=Choose(highway-mpg)</definition>
+      <discretization>
+        <interval upper="16.6"/>
+        <interval upper="20.200000000000003"/>
+        <interval upper="23.800000000000004"/>
+        <interval upper="27.400000000000006"/>
+        <interval upper="31.000000000000007"/>
+        <interval upper="34.60000000000001"/>
+        <interval upper="38.20000000000001"/>
+        <interval upper="41.80000000000001"/>
+        <interval upper="45.40000000000001"/>
+        <interval upper="49.000000000000014"/>
+      </discretization>
+    </equation>
+    <equation id="bore">
+      <definition lower="2.54" upper="3.94">bore=Normal(3.3626321243523347,0.06804548346835872)</definition>
+      <discretization>
+        <interval upper="2.68"/>
+        <interval upper="2.8200000000000003"/>
+        <interval upper="2.9600000000000004"/>
+        <interval upper="3.1000000000000005"/>
+        <interval upper="3.2400000000000007"/>
+        <interval upper="3.380000000000001"/>
+        <interval upper="3.520000000000001"/>
+        <interval upper="3.660000000000001"/>
+        <interval upper="3.800000000000001"/>
+        <interval upper="3.9400000000000013"/>
+      </discretization>
+    </equation>
+    <equation id="stroke">
+      <definition lower="2.07" upper="4.17">stroke=Normal(3.234279200592148,0.10364357741345885)</definition>
+      <discretization>
+        <interval upper="2.28"/>
+        <interval upper="2.4899999999999998"/>
+        <interval upper="2.6999999999999997"/>
+        <interval upper="2.9099999999999997"/>
+        <interval upper="3.1199999999999997"/>
+        <interval upper="3.3299999999999996"/>
+        <interval upper="3.5399999999999996"/>
+        <interval upper="3.7499999999999996"/>
+        <interval upper="3.9599999999999995"/>
+        <interval upper="4.17"/>
+      </discretization>
+    </equation>
+    <equation id="peak-rpm">
+      <definition lower="4150.0" upper="6600.0">peak-rpm=Normal(5047.141376757958,200383.3160599845)</definition>
+      <discretization>
+        <interval upper="4395.0"/>
+        <interval upper="4640.0"/>
+        <interval upper="4885.0"/>
+        <interval upper="5130.0"/>
+        <interval upper="5375.0"/>
+        <interval upper="5620.0"/>
+        <interval upper="5865.0"/>
+        <interval upper="6110.0"/>
+        <interval upper="6355.0"/>
+        <interval upper="6600.0"/>
+      </discretization>
+    </equation>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="make">
+        <name>make</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="fuel-type">
+        <name>fuel-type</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="aspiration">
+        <name>aspiration</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="num-of-doors">
+        <name>num-of-doors</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="body-style">
+        <name>body-style</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="drive-wheels">
+        <name>drive-wheels</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="wheel-base">
+        <name>wheel-base</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="length">
+        <name>length</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="width">
+        <name>width</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="height">
+        <name>height</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="curb-weight">
+        <name>curb-weight</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="engine-type">
+        <name>engine-type</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="num-of-cylinders">
+        <name>num-of-cylinders</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="engine-size">
+        <name>engine-size</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="fuel-system">
+        <name>fuel-system</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="bore">
+        <name>bore</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="stroke">
+        <name>stroke</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="compression-ratio">
+        <name>compression-ratio</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="horsepower">
+        <name>horsepower</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="peak-rpm">
+        <name>peak-rpm</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="city-mpg">
+        <name>city-mpg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="highway-mpg">
+        <name>highway-mpg</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="price">
+        <name>price</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="symboling">
+        <name>symboling</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>

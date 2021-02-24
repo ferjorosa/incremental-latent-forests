@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<smile discsamples="10000" id="DAG" numsamples="10000" version="1.0">
+  <nodes>
+    <cpt id="LV_7">
+      <state id="0"/>
+      <state id="1"/>
+      <probabilities>0.19964204442068859 0.8003579555793114 </probabilities>
+    </cpt>
+    <equation id="R">
+      <parents>LV_7</parents>
+      <definition lower="0.0" upper="74.0">R=Choose(LV_7,Normal(1.9999999999985016,0.014775707775011067),Normal(12.21376976416907,63.230489876775636))</definition>
+      <discretization>
+        <interval upper="7.4"/>
+        <interval upper="14.8"/>
+        <interval upper="22.200000000000003"/>
+        <interval upper="29.6"/>
+        <interval upper="37.0"/>
+        <interval upper="44.4"/>
+        <interval upper="51.8"/>
+        <interval upper="59.199999999999996"/>
+        <interval upper="66.6"/>
+        <interval upper="74.0"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_6">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>LV_7</parents>
+      <probabilities>0.7513263115656501 0.24867368843434998 0.7652721184703097 0.2347278815296903 </probabilities>
+    </cpt>
+    <equation id="M">
+      <parents>LV_6</parents>
+      <definition lower="250.0" upper="12500.0">M=Choose(LV_6,Normal(1702.034809631101,2415782.543010684),Normal(249.9999999998417,0.012500041184125848))</definition>
+      <discretization>
+        <interval upper="1475.0"/>
+        <interval upper="2700.0"/>
+        <interval upper="3925.0"/>
+        <interval upper="5150.0"/>
+        <interval upper="6375.0"/>
+        <interval upper="7600.0"/>
+        <interval upper="8825.0"/>
+        <interval upper="10050.0"/>
+        <interval upper="11275.0"/>
+        <interval upper="12500.0"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_5">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <parents>LV_6</parents>
+      <probabilities>0.0038314678666341428 0.2950480545920174 0.7011204775413483 0.9755580432755693 0.012203627412554948 0.012238329311875826 </probabilities>
+    </cpt>
+    <equation id="F">
+      <parents>LV_5</parents>
+      <definition lower="1.0" upper="50.0">F=Choose(LV_5,Normal(0.9999999999993672,0.012500662556110024),Normal(13.127821089888416,65.26763576019623),Normal(4.168672019550972,3.734653135895826))</definition>
+      <discretization>
+        <interval upper="5.9"/>
+        <interval upper="10.8"/>
+        <interval upper="15.700000000000001"/>
+        <interval upper="20.6"/>
+        <interval upper="25.5"/>
+        <interval upper="30.4"/>
+        <interval upper="35.3"/>
+        <interval upper="40.199999999999996"/>
+        <interval upper="45.099999999999994"/>
+        <interval upper="49.99999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="LV_4">
+      <state id="0"/>
+      <state id="1"/>
+      <state id="2"/>
+      <state id="3"/>
+      <parents>LV_5</parents>
+      <probabilities>0.04786119547923367 0.2219956396613411 0.5195767673497812 0.210566397509644 0.9378991783048878 0.013085075950950065 0.03593820342645706 0.013077542317705105 0.5845265759855891 0.031126270404727804 0.3717042421374049 0.012642911472278183 </probabilities>
+    </cpt>
+    <equation id="T">
+      <parents>LV_4</parents>
+      <definition lower="2.0" upper="98.0">T=Choose(LV_4,Normal(50.903015184460756,411.3355657660121),Normal(3.9998864351845294,0.043099134384724125),Normal(18.734864175221652,35.86857050050501),Normal(2.000658109214199,0.05360588144781724))</definition>
+      <discretization>
+        <interval upper="11.6"/>
+        <interval upper="21.2"/>
+        <interval upper="30.799999999999997"/>
+        <interval upper="40.4"/>
+        <interval upper="50.0"/>
+        <interval upper="59.6"/>
+        <interval upper="69.2"/>
+        <interval upper="78.8"/>
+        <interval upper="88.39999999999999"/>
+        <interval upper="97.99999999999999"/>
+      </discretization>
+    </equation>
+    <cpt id="class">
+      <state id="0"/>
+      <state id="1"/>
+      <parents>LV_4</parents>
+      <probabilities>0.7544500670605337 0.24554993293946623 0.6738020025800397 0.32619799741996014 0.8008502848854671 0.19914971511453297 0.7985030405236956 0.20149695947630442 </probabilities>
+    </cpt>
+  </nodes>
+  <extensions>
+    <genie app="GeNIe 2.3.3705.0 ACADEMIC" faultnameformat="nodestate" name="DAG" version="1.0">
+      <node id="R">
+        <name>R</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="F">
+        <name>F</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="M">
+        <name>M</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="T">
+        <name>T</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="class">
+        <name>class</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_4">
+        <name>LV_4</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_5">
+        <name>LV_5</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_6">
+        <name>LV_6</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+      <node id="LV_7">
+        <name>LV_7</name>
+        <interior color="e5f6f7"/>
+        <outline color="000080"/>
+        <font bold="true" color="000080" name="Arial" size="10"/>
+        <position>100 100 100 100</position>
+        <barchart active="true" height="110" width="160"/>
+      </node>
+    </genie>
+  </extensions>
+</smile>
