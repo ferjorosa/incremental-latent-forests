@@ -1,0 +1,46 @@
+{
+    "average_learning_time": 0.025101782226562497,
+    "average_test_ll": NaN,
+    "folds": {
+        "fold_1": {
+            "learning_time": 26.14501953125,
+            "test_ll": NaN
+        },
+        "fold_10": {
+            "learning_time": 27.6298828125,
+            "test_ll": NaN
+        },
+        "fold_2": {
+            "learning_time": 24.700927734375,
+            "test_ll": NaN
+        },
+        "fold_3": {
+            "learning_time": 24.31201171875,
+            "test_ll": NaN
+        },
+        "fold_4": {
+            "learning_time": 24.41455078125,
+            "test_ll": NaN
+        },
+        "fold_5": {
+            "learning_time": 24.589111328125,
+            "test_ll": NaN
+        },
+        "fold_6": {
+            "learning_time": 24.34765625,
+            "test_ll": NaN
+        },
+        "fold_7": {
+            "learning_time": 25.23291015625,
+            "test_ll": NaN
+        },
+        "fold_8": {
+            "learning_time": 24.352294921875,
+            "test_ll": NaN
+        },
+        "fold_9": {
+            "learning_time": 25.29345703125,
+            "test_ll": NaN
+        }
+    }
+}
