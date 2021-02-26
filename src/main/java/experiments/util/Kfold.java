@@ -26,13 +26,13 @@ public class Kfold {
     public static void main(String[] args) throws Exception {
 
         /* Discrete */
-        /*
+/*
         String directory = "discrete";
         String[] fileNames = {
                 "alarm",  "balance_scale", "breast_cancer", "car_evaluation", "coil_42", "hayes_roth", "hiv_test",
                 "house_building", "mushroom", "news_100", "nursery", "pascal_voc_2007", "spect_heart", "vote", "webkb_336"
         };
-        */
+*/
         /* Continuous  */
         /*
         String directory = "continuous";
@@ -43,12 +43,14 @@ public class Kfold {
         */
 
         /* Mixed */
+
         String directory = "mixed";
         String[] fileNames = {
                "arrythmia", "autos", "blood_transfusion", "breast_cancer_coimbra", "ecoli", "forest_fires", "haberman",
                 "musk", "parkinsons", "planning_relax", "qsar_biodeg", "segment", "thoracic_surgery", "thyroid",
-                "user_knowledge"
+                "user_knowledge", "spanish_living_conditions", "spanish_living_conditions_numeric"
         };
+         
 
         for(String fileName: fileNames) {
             System.out.println("\n" + fileName);

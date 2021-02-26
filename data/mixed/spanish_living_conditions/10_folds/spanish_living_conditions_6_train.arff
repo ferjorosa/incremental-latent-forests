@@ -21,7 +21,7 @@
 @attribute problem_pollution {no, yes}
 @attribute problem_vandal {no, yes}
 @attribute problem_leaks {no, yes}
-@attribute problem_temp {no, yes}
+@attribute afford_heating {no, yes}
 
 
 @data
